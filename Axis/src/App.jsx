@@ -1,4 +1,4 @@
-
+// import image from './assets/Header.svg'
 import './App.css'
 
 function App() {
@@ -6,10 +6,8 @@ function App() {
 
   return (
     
-      <div className='border border-red-500 flex'>
-        <div className=''></div>
-        <div></div>
-        hello
+      <div className='border relative border-red-500 p-5 rounded-full'>
+
       </div>
   
   )
