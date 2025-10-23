@@ -3,23 +3,26 @@ import ImgIcon from '../assets/Navbar/SVG.png'
 import Button from '../assets/Navbar/Button.svg'
 import Header from '../assets/Navbar/Header.svg'
 import Like from '../assets/Navbar/Header (1).svg'
+import { Link } from 'react-router-dom'
 const Navbar = () => {
   return (
     <div className='h-[120px] border m-auto relative ' >
         {/* logo */}
-        <div  className='flex items-center flex-row-reverse gap-3 justify-end px-3 mt-7' dir='rtl'   > 
-            <div className='text-right' > <p className='text-lg font-bold text-gray-800'>نامبر وان</p> 
-            <p className='text-sm text-gray-600'> همیشه بهترین</p>
-            </div>
-            <div className='w-12 h-12 to-[#7572AB] from-[#5751E1] bg-gradient-to-br text-white rounded-full shadow-md flex items-center justify-center '>
-                <span className='text-lg font-bold'>N1</span>
-             </div>
-            </div>
-
+        <Link to="/">
+          <div  className='flex items-center flex-row-reverse gap-3 justify-end px-3 mt-7' dir='rtl'   > 
+              <div className='text-right' > <p className='text-lg font-bold text-gray-800'>نامبر وان</p> 
+              <p className='text-sm text-gray-600'> همیشه بهترین</p>
+              </div>
+              <div className='w-12 h-12 to-[#7572AB] from-[#5751E1] bg-gradient-to-br text-white rounded-full shadow-md flex items-center justify-center '>
+                  <span className='text-lg font-bold'>N1</span>
+              </div>
+          </div>
+        </Link>
         {/* menu */}
         <div className=' flex flex-row gap-4 px-52 relative bottom-8 ' dir='rtl'> 
-        <p className='hover:text-[#5751E1] cursor-pointer'>صفحه اصلی</p>    
-        <p className='hover:text-[#5751E1]  cursor-pointer'>دوره های اموزشی</p>
+        <p className='hover:text-[#5751E1] cursor-pointer'>
+          <Link to='/'>صفحه اصلی</Link></p>    
+        <p className='hover:text-[#5751E1]  cursor-pointer'><Link to="/courses"> دوره ها</Link></p>
         <p className='hover:text-[#5751E1]  cursor-pointer'>ایونت ها</p>
         <p className='hover:text-[#5751E1]  cursor-pointer'> فروشگاه</p>
         <p className='hover:text-[#5751E1]  cursor-pointer'>وبلاگ </p>

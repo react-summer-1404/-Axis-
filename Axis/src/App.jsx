@@ -1,19 +1,20 @@
-// import image from './assets/Header.svg'
-import './App.css'
-import Layout from './Layout/Layou'
+import Layout from './Layout/Layout'
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import Courses from './Pages/Courses'
+import Landing from './Componets/Landing'
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    children:[
+      {index: true, element: <Landing />},
+      {path: "/courses", element: <Courses />}
+    ],
+  },
+]);
 
 
-
-function App() {
-
-
-  return (
-    
-      <div>
-          <Layout />
-      </div>
-  
-  )
+export default function App() {
+  return <RouterProvider router={router}/>
 }
-
-export default App
