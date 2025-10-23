@@ -1,8 +1,8 @@
 import React from 'react'
-import ImgIcon from './img/SVG.png'
-import Button from './img/Button.svg'
-import Header from './img/Header.svg'
-import Like from './img/Header (1).svg'
+import ImgIcon from '../assets/Navbar/SVG.png'
+import Button from '../assets/Navbar/Button.svg'
+import Header from '../assets/Navbar/Header.svg'
+import Like from '../assets/Navbar/Header (1).svg'
 const Navbar = () => {
   return (
     <div className='h-[120px] w-[1550px] border m-auto relative ' >
@@ -18,12 +18,12 @@ const Navbar = () => {
 
         {/* menu */}
         <div className=' flex flex-row gap-6 px-52 relative bottom-8 ' dir='rtl'> 
-        <p className='hover:text-[#5751E1] '>صفحه اصلی</p>    
-        <p className='hover:text-[#5751E1] '>دوره های اموزشی</p>
-        <p className='hover:text-[#5751E1] '>ایونت ها</p>
-        <p className='hover:text-[#5751E1] '> فروشگاه</p>
-        <p className='hover:text-[#5751E1] '>وبلاگ </p>
-        <p className='hover:text-[#5751E1] '>مربیان</p>
+        <p className='hover:text-[#5751E1] cursor-pointer'>صفحه اصلی</p>    
+        <p className='hover:text-[#5751E1]  cursor-pointer'>دوره های اموزشی</p>
+        <p className='hover:text-[#5751E1]  cursor-pointer'>ایونت ها</p>
+        <p className='hover:text-[#5751E1]  cursor-pointer'> فروشگاه</p>
+        <p className='hover:text-[#5751E1]  cursor-pointer'>وبلاگ </p>
+        <p className='hover:text-[#5751E1]  cursor-pointer'>مربیان</p>
         </div>
         {/* search */}
         <div className='border rounded-full w-[400px] h-[50px] border-gray-300 absolute bottom-9 left-[350px] flex '>

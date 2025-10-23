@@ -1,6 +1,7 @@
 // import image from './assets/Header.svg'
 import './App.css'
-import Navbar from './Componets/Navbar'
+import Navbar from './Common/Navbar'
+
 
 
 function App() {
