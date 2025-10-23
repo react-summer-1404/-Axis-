@@ -5,7 +5,7 @@ import Header from '../assets/Navbar/Header.svg'
 import Like from '../assets/Navbar/Header (1).svg'
 const Navbar = () => {
   return (
-    <div className='h-[120px] w-[1550px] border m-auto relative ' >
+    <div className='h-[120px] border m-auto relative ' >
         {/* logo */}
         <div  className='flex items-center flex-row-reverse gap-3 justify-end px-3 mt-7' dir='rtl'   > 
             <div className='text-right' > <p className='text-lg font-bold text-gray-800'>نامبر وان</p> 
@@ -17,7 +17,7 @@ const Navbar = () => {
             </div>
 
         {/* menu */}
-        <div className=' flex flex-row gap-6 px-52 relative bottom-8 ' dir='rtl'> 
+        <div className=' flex flex-row gap-4 px-52 relative bottom-8 ' dir='rtl'> 
         <p className='hover:text-[#5751E1] cursor-pointer'>صفحه اصلی</p>    
         <p className='hover:text-[#5751E1]  cursor-pointer'>دوره های اموزشی</p>
         <p className='hover:text-[#5751E1]  cursor-pointer'>ایونت ها</p>
@@ -26,7 +26,7 @@ const Navbar = () => {
         <p className='hover:text-[#5751E1]  cursor-pointer'>مربیان</p>
         </div>
         {/* search */}
-        <div className='border rounded-full w-[400px] h-[50px] border-gray-300 absolute bottom-9 left-[350px] flex '>
+        <div className='border rounded-full w-[400px] h-[50px] border-gray-300 absolute bottom-9 left-[320px] flex '>
           <div> 
           <select className="  px-1 py-1 text-right focus:outline-none  relative top-2 left-60 bg-white " dir='rtl'>
           <option>دسته‌بندی‌ها</option>
@@ -39,10 +39,10 @@ const Navbar = () => {
           <img src={Button} className='size-11 absolute  left-2 top-[2px]'/>
           <input type='search'  placeholder='جستجو برای دوره...' dir='rtl' className=' relative right-1 w-32 focus:outline-none'/>
          </div>
-       <img src={Header} className='size-12 absolute top-9 left-[270px]'/> 
-       <img src={Like} className='size-12 absolute top-9 left-[210px]' />
+       <img src={Header} className='size-10 absolute top-9 left-[260px]'/> 
+       <img src={Like} className='size-10 absolute top-9 left-[210px]' />
 
-        <div className='border w-36 h-12 rounded-full pt-2  bg-[#FFC224] font-bold text-center absolute top-9 left-8 border-[#06235B30]'> حساب کاربری </div>
+        <div className='border w-36 h-11 rounded-full pt-2  bg-[#FFC224] font-bold text-center absolute top-9 left-8 border-[#06235B30]'> حساب کاربری </div>
  
 
 
