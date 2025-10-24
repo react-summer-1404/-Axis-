@@ -2,6 +2,8 @@
 // src/pages/CoursesPage.jsx
 // import React from 'react'
 import React, { useState } from "react";
+import RatingSection from "./RatingSection";
+import PriceFilter from "./PriceFilter";
 const About = () => {
   const [showMore, setShowMore] = useState(false);
 
@@ -121,9 +123,9 @@ const About = () => {
               </li>
             </ul>
           </div>
+          <RatingSection/>
+          <PriceFilter/>
            </aside>
-
-
     </div>
   )
 }
