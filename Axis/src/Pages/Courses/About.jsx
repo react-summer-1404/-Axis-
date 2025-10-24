@@ -45,6 +45,82 @@ const About = () => {
               {showMore ? "نمایش کمتر -" : "نمایش بیشتر +"}
             </button>
           </div>
+
+            {/* نحوه برگزاری */}
+
+            <div className="bg-[#F7F7F9] rounded-2xl shadow p-4">
+            <h2 className="text-base font-bold mb-3">نحوه برگزاری</h2>
+            <ul className="space-y-2 text-gray-700 text-sm">
+              <li>
+                <label className="flex items-center">
+                  <input type="checkbox" className="ml-2 accent-blue-500" />
+                  حضوری
+                </label>
+              </li>
+              <li>
+                <label className="flex items-center">
+                  <input type="checkbox" className="ml-2 accent-blue-500" />
+                  آنلاین
+                </label>
+              </li>
+            </ul>
+          </div>
+
+          {/* سطح مهارت */}
+          <div className="bg-[#F7F7F9] rounded-2xl shadow p-4">
+            <h2 className="text-base font-bold mb-3"> سطح مهارت</h2>
+            <ul className="space-y-2 text-gray-700 text-sm">
+              <li>
+                <label className="flex items-center">
+                  <input type="checkbox" className="ml-2 accent-blue-500" />
+                  مبتدی‌
+                </label>
+              </li>
+              <li>
+                <label className="flex items-center">
+                  <input type="checkbox" className="ml-2 accent-blue-500" />
+                متوسط
+                </label>
+              </li>
+              <li>
+                <label className="flex items-center">
+                  <input type="checkbox" className="ml-2 accent-blue-500" />
+                   بالا
+                </label>
+              </li>
+            </ul>
+          </div>
+
+              {/* مربیان */}
+              <div className="bg-[#F7F7F9] rounded-2xl shadow p-4">
+            <h2 className="text-base font-bold mb-3"> مربیان </h2>
+            <ul className="space-y-2 text-gray-700 text-sm">
+              <li>
+                <label className="flex items-center">
+                  <input type="checkbox" className="ml-2 accent-blue-500" />
+                   دیوید میلار (10)
+                </label>
+              </li>
+              <li>
+                <label className="flex items-center">
+                  <input type="checkbox" className="ml-2 accent-blue-500" />
+                  وید وارن (13)
+                </label>
+              </li>
+              <li>
+                <label className="flex items-center">
+                  <input type="checkbox" className="ml-2 accent-blue-500" />
+                 جنی ویلسون(22)
+                </label>
+              </li>
+              <li>
+                <label className="flex items-center">
+                  <input type="checkbox" className="ml-2 accent-blue-500" />
+                  جیکوب جونز(42)
+                </label>
+              </li>
+            </ul>
+          </div>
            </aside>
 
 
