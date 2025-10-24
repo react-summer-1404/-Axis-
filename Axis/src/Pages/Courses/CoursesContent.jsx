@@ -2,9 +2,13 @@ import React from 'react'
 import Tablist from '../../assets/Courses/iconCourses/Tablist → Tab.svg'
 import Tablist2 from '../../assets/Courses/iconCourses/Tablist → Tab (1).svg'
 import About from './About'
+import CourseCard from '../../Common/CourseCard'
+import CoursesApi from '../../Common/CoursesApi'
+
 const CoursesContent = () => {
   return (
     <div dir='rtl'>
+      
     <div className=' flex justify-between relative py-10 top-8 pr-[20%] pl-[20%]'>
 
         <sapn > نمایش
@@ -35,7 +39,7 @@ const CoursesContent = () => {
           </svg>
         </div>
           </sapn> 
-
+          
         {/* select */}
         <div className='flex gap-3 text-gray-500 relative' > مرتب سازی براساس :
             <select className='text-black p-3 border bg-white relative bottom-2 rounded-md border-[#DCDBE5] text-sm font-medium  h-[80%]'>
@@ -53,7 +57,13 @@ const CoursesContent = () => {
          <img src={Tablist} className='size-9 absolute left-[16%] ' />
          <img src={Tablist2} className='size-9 absolute left-[13%] '/> 
     </div>
-      <About/>
+    <div className='flex justify-start gap-10'>   
+       <About/> 
+       <CourseCard/>
+       <CoursesApi/>
+       </div>
+    
+    
     </div>
   )
 }
