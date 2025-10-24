@@ -7,6 +7,7 @@ const Courses = () => {
     <div>
         <CoursesHeader/>
         <CoursesContent/>
+        
     </div>
   )
 }
