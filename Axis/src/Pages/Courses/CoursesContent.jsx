@@ -53,7 +53,7 @@ const CoursesContent = () => {
          <img src={Tablist} className='size-9 absolute left-[16%] ' />
          <img src={Tablist2} className='size-9 absolute left-[13%] '/> 
     </div>
-   <About/> 
+      <About/>
     </div>
   )
 }
