@@ -4,6 +4,7 @@ import Button from '../assets/Navbar/Button.svg'
 import Header from '../assets/Navbar/Header.svg'
 import Like from '../assets/Navbar/Header (1).svg'
 import { Link } from 'react-router-dom'
+
 const Navbar = () => {
   return (
     <div className='h-[120px] border m-auto relative ' >
@@ -46,7 +47,7 @@ const Navbar = () => {
        <img src={Like} className='size-10 absolute top-9 left-[210px]' />
 
         <div className='border w-36 h-11 rounded-full pt-2  bg-[#FFC224] font-bold text-center absolute top-9 left-8 border-[#06235B30]'> حساب کاربری </div>
- 
+        
 
 
 
