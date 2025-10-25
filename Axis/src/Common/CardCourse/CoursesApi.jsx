@@ -6,7 +6,7 @@ const CoursesApi = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // آدرس Mock API (باید با آدرس MockAPI.io یا json-server شما جایگزین شود)
+  
   const MOCK_API_URL = "https://68dbe40a445fdb39dc26fbfe.mockapi.io/courses/course"; 
 
   useEffect(() => {
@@ -34,12 +34,12 @@ const CoursesApi = () => {
     <div className="container mx-auto p-4">
     <h1 className="text-3xl font-bold mb-6 text-center dark:text-white"></h1>
     
-    {/* نمایش دوره‌ها در یک Grid ریسپانسیو */}
+    {/* نمایش دوره‌ Grid ریسپانسیو */}
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-6">
       {courses.map(course => (
         <CourseCard key={course.id} course={course} />
       ))}
-      {/* یک کارت Placeholder برای شبیه سازی تصویر اصلی */}
+      {/* یک کارت Placeholder  شبیه سازی تصویر اصلی */}
       {courses.length === 0 && <CourseCard course={{
           id: 'mock',
           title: "طراحی کامل گرافیک برای مبتدی ها",

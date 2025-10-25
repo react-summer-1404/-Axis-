@@ -1,5 +1,8 @@
 import React from 'react';
 import CoursesImg from '../../assets/Courses/MainCourses/course_thumb03.jpg.svg'
+import Like from '../Button/Like';
+import LevelPro from '../Button/LevelPro';
+
 
 
 
@@ -17,21 +20,8 @@ const CourseCard = ({ course }) => {
           alt={course.title}
         />
         {/* آیکون لایک/علاقه */}
-        <button className="absolute top-3 right-3 p-2 bg-white/70 rounded-full text-red-500 hover:text-red-700 transition duration-150">
-          {/* آیکون قلب   */}
-          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-          </svg>
-        </button>
-        {/* آیکون و برچسب‌های Exp و Laravel Pro (برای شبیه‌سازی) */}
-        <div className="absolute top-3 left-3 flex flex-col space-y-2">
-            <span className="text-white text-xs font-bold px-3 py-1 bg-gray-800/80 rounded-lg shadow-md transform -rotate-6">
-                Exp
-            </span>
-            <span className="text-white text-xs font-bold px-3 py-1 bg-red-600/80 rounded-lg shadow-md transform rotate-3">
-                Laravel Pro
-            </span>
-        </div>
+          <Like/>
+          <LevelPro/>
       </div>
 
       {/* بخش اطلاعات */}
@@ -84,16 +74,17 @@ const CourseCard = ({ course }) => {
           <div className="flex items-center space-x-4 space-x-reverse text-sm font-semibold">
             {/* تعداد لایک و دیسلایک */}
             <div className="flex items-center">
-              <button className="flex items-center p-2 bg-gray-500 rounded-lg text-black hover:bg-gray-400 transition dark:bg-gray-200 dark:hover:bg-gray-300">
-                <span className="ml-1">{course.likes}</span>
-                {/* آیکون شصت رو به بالا */}
+            <button className="flex items-center p-2 bg-gray-300 rounded-lg text-black hover:bg-gray-400 transition dark:bg-gray-200 dark:hover:bg-gray-300">
+                 <span className="ml-1">{course.likes}</span>
+                 {/* آیکون شصت رو به بالا */}
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.5-.54 1.81-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/>
-                </svg>
-              </button>
+                 <path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.5-.54 1.81-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/>
+                 </svg>
+                 </button>
+                 
             </div>
             <div className="flex items-center">
-              <button className="flex items-center p-2 bg-gray-500 rounded-lg text-black hover:bg-gray-400 transition dark:bg-gray-200 dark:hover:bg-gray-300">
+              <button className="flex items-center p-2 bg-gray-300 rounded-lg text-black hover:bg-gray-400 transition dark:bg-gray-200 dark:hover:bg-gray-300">
                 <span className="ml-1">{course.dislikes}</span>
                 {/* آیکون شصت رو به پایین */}
                 <svg className="w-4 h-4 transform rotate-180" fill="currentColor" viewBox="0 0 24 24">
