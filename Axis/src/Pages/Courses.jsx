@@ -5,12 +5,13 @@ import CoursesContent from './Courses/CoursesContent'
 
 
 
+
 const Courses = () => {
   return (
     <div>
         <CoursesHeader/>
         <CoursesContent/>
-       
+   
     </div>
   )
 }

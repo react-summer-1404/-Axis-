@@ -2,8 +2,8 @@ import React from 'react'
 import Tablist from '../../assets/Courses/iconCourses/Tablist → Tab.svg'
 import Tablist2 from '../../assets/Courses/iconCourses/Tablist → Tab (1).svg'
 import About from './About'
-import CourseCard from '../../Common/CourseCard'
-import CoursesApi from '../../Common/CoursesApi'
+import CourseCard from '../../Common/CardCourse/CourseCard'
+import CoursesApi from '../../Common/CardCourse/CoursesApi'
 
 const CoursesContent = () => {
   return (
@@ -11,10 +11,10 @@ const CoursesContent = () => {
       
     <div className=' flex justify-between relative py-10 top-8 pr-[20%] pl-[20%]'>
 
-        <sapn > نمایش
+        <span > نمایش
           <span  className="text-indigo-600 font-semibold"> 250 </span> 
           نتیجه از  
-          <sapn className="text-indigo-600 font-semibold"> 250</sapn>
+          <span className="text-indigo-600 font-semibold"> 250</span>
 
           {/* search */}
           <div className="relative w-full md:w-64 left-64 bottom-8">
@@ -38,7 +38,7 @@ const CoursesContent = () => {
             />
           </svg>
         </div>
-          </sapn> 
+          </span> 
           
         {/* select */}
         <div className='flex gap-3 text-gray-500 relative' > مرتب سازی براساس :

@@ -1,5 +1,6 @@
 import React from 'react';
-import CoursesImg from '../assets/Courses/MainCourses/course_thumb03.jpg.svg'
+import CoursesImg from '../../assets/Courses/MainCourses/course_thumb03.jpg.svg'
+
 
 // کامپوننت اصلی کارت
 const CourseCard = ({ course }) => {
@@ -7,7 +8,7 @@ const CourseCard = ({ course }) => {
   if (!course) return null;
 
   return (
-    <div className="max-w-100 relative bottom-14  m-4 md:max-w-sm mx-auto bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden  border border-gray-100 dark:bg-gray-50 dark:border-[#ffff]">
+    <div className="max-w-100 relative bottom-14 left-5 m-4 md:max-w-sm mx-auto bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden  border border-gray-100 dark:bg-gray-50 dark:border-[#ffff]">
       {/* بخش تصویر */}
       <div className="relative  pr-2 pl-2 pt-3 pb-3 sm:h-56 bg-gradient-to-r overflow-hidden border rounded-md">
         <img
@@ -124,7 +125,7 @@ const CourseCard = ({ course }) => {
           </div>
         </div>
       </div>
-     
+  
     </div>
   );
 };
