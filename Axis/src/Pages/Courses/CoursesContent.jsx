@@ -11,7 +11,7 @@ const CoursesContent = () => {
       
     <div className=' flex justify-between relative py-10 top-8 pr-[20%] pl-[20%]'>
 
-        <span > نمایش
+        <span className='dark:text-gray-200'> نمایش
           <span  className="text-indigo-600 font-semibold"> 250 </span> 
           نتیجه از  
           <span className="text-indigo-600 font-semibold"> 250</span>
@@ -41,12 +41,12 @@ const CoursesContent = () => {
           </span> 
           
         {/* select */}
-        <div className='flex gap-3 text-gray-500 relative' > مرتب سازی براساس :
-            <select className='text-black p-3 border bg-white relative bottom-2 rounded-md border-[#DCDBE5] text-sm font-medium  h-[80%]'>
+        <div className='flex gap-3 text-gray-500 relative dark:text-gray-200' > مرتب سازی براساس :
+            <select className='text-black p-3 border bg-white relative bottom-2 rounded-md border-[#DCDBE5] text-sm font-medium  h-[80%] dark:bg-gray-100'>
                 <option >محبوب ترین ها</option>
                 <option> جدید ترین ها</option>
             </select>
-            <select  className='text-black p-3 border bg-white relative bottom-2 rounded-md border-[#DCDBE5] text-sm font-medium h-[80%]'> 
+            <select  className='text-black p-3 border bg-white relative bottom-2 rounded-md border-[#DCDBE5] text-sm font-medium h-[80%] dark:bg-gray-100'> 
             <option> نزولی </option>
             <option> افزایشی </option>
             </select>

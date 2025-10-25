@@ -2,13 +2,13 @@ import React from 'react';
 import CoursesImg from '../../assets/Courses/MainCourses/course_thumb03.jpg.svg'
 
 
-// کامپوننت اصلی کارت
+
 const CourseCard = ({ course }) => {
-  // مطمئن شوید که داده ها وجود دارند
+  
   if (!course) return null;
 
   return (
-    <div className="max-w-100 relative bottom-14 left-5 m-4 md:max-w-sm mx-auto bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden  border border-gray-100 dark:bg-gray-50 dark:border-[#ffff]">
+    <div className="max-w-100 relative bottom-14 left-5 m-4 md:max-w-sm mx-auto bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden  border border-gray-100 dark:bg-gray-200 dark:border-[#ffff] dark:hover:shadow-gray-600">
       {/* بخش تصویر */}
       <div className="relative  pr-2 pl-2 pt-3 pb-3 sm:h-56 bg-gradient-to-r overflow-hidden border rounded-md">
         <img
@@ -18,7 +18,7 @@ const CourseCard = ({ course }) => {
         />
         {/* آیکون لایک/علاقه */}
         <button className="absolute top-3 right-3 p-2 bg-white/70 rounded-full text-red-500 hover:text-red-700 transition duration-150">
-          {/* آیکون قلب (مثلاً از Heroicons یا Font Awesome) */}
+          {/* آیکون قلب   */}
           <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
             <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
           </svg>
