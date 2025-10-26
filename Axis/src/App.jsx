@@ -2,6 +2,7 @@ import Layout from './Layout/Layout'
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Courses from './Pages/Courses'
 import Landing from './Componets/Landing'
+import CoursesDetails from './Pages/CoursesDetails';
 
 
 const router = createBrowserRouter([
@@ -10,10 +11,13 @@ const router = createBrowserRouter([
     element: <Layout />,
     children:[
       {index: true, element: <Landing />},
-      {path: "/courses", element: <Courses />}
+      {path: "/courses", element: <Courses />},
+      {path: "/coursesDetails" , element: <CoursesDetails/> }
+     
     ],
   },
 ]);
+
 
 
 export default function App() {
