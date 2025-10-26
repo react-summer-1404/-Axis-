@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Courses from './Pages/Courses'
 import Landing from './Componets/Landing'
 
+
 const router = createBrowserRouter([
   {
     path: '/',

@@ -5,6 +5,7 @@ import Header from '../assets/Navbar/Header.svg'
 import Like from '../assets/Navbar/Header (1).svg'
 import { Link } from 'react-router-dom'
 import React, { useState } from 'react';
+import ThemeToggle from './Button/ThemeToggle'
 
 const Navbar = () => { 
   const [isOpen, setIsOpen] = useState(false);
@@ -92,7 +93,7 @@ const Navbar = () => {
           <div className='flex items-center gap-4 order-1 lg:order-none'>
              <img src={Header} className='size-10' alt="Header icon"/> 
              <img src={Like} className='size-10' alt="Like icon"/> 
-            
+            <ThemeToggle/>
             <div className='border w-36 h-11 rounded-full pt-2 bg-[#FFC224] font-bold text-center border-[#06235B30] cursor-pointer'>
               حساب کاربری
             </div>
