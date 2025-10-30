@@ -36,7 +36,7 @@ const Sidebar = () => {
 
   return (
    
-    <div dir='rtl'>
+    <div >
     <div className="w-full lg:w-80 lg:mr-24 lg:mt-10 p-4 space-y-6 lg:sticky lg:top-8 border border-gray-300 rounded-xl" dir="rtl">
       
       {/* { Course Price */} 

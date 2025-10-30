@@ -7,8 +7,11 @@ const CoursesDetails = () => {
   return (
     <div>
     <HeaderDetails/>
-    <Sidebar/>
+    <div className='flex justify-end gap-20'> 
     <CardSidebar/>
+    <Sidebar/>
+    
+    </div>
     </div>
   )
 }
