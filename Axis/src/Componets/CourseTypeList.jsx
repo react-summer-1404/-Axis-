@@ -1,6 +1,6 @@
-// src/components/CourseTypeList.jsx
+
 import React, { useState, useEffect } from 'react';
-import { getCourseTypes } from '../api/courseType'; // <-- ایمپورت تابع جدید
+import { getCourseTypes } from '../api/courseType'; 
 
 function CourseTypeList() {
     const [types, setTypes] = useState([]);

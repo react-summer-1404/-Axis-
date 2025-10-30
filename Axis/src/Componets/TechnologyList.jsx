@@ -1,4 +1,4 @@
-// src/components/TechnologyList.jsx
+
 import React, { useState, useEffect } from 'react';
 import { getTechnologies } from '../api/technology'; 
 
