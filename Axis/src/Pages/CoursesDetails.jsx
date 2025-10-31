@@ -7,7 +7,7 @@ const CoursesDetails = () => {
   return (
     <div>
     <HeaderDetails/>
-    <div className='flex justify-end gap-20'> 
+    <div className='flex justify-end gap-11'> 
     <CardSidebar/>
     <Sidebar/>
     
