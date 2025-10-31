@@ -30,7 +30,7 @@ const CardSidebar = () => {
                     </svg>
                 </div>
             </div>
-            <div className=" text-right"> 
+            <div className=" text-right pr-3"> 
                 <h2 className="text-xl  text-gray-900 mb-2 leading-8">
                     حل تعارضات بین طراحان و مهندسان
                 </h2>
@@ -52,10 +52,29 @@ const CardSidebar = () => {
                         <span className="mr-1">محمد محسن</span>
                         <svg className="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd"></path></svg>
                     </div>
-
                 </div>
-                
-           
+                    
+                <div className="flex justify-end space-x-3  mb-5 mt-8 border-b border-gray-200 pb-7"> 
+                    
+                    {['نظرات کاربران', 'مربیان', 'برنامه تحصیلی', 'بررسی اجمالی'].reverse().map((tab) => (
+                        <button
+                            key={tab}
+                            className={`
+                                text-sm font-medium w-28 p-2 rounded-full transition duration-150 ease-in-out 
+                                whitespace-nowrap focus:outline-none 
+                                
+                                // استایل حالت عادی
+                                bg-[#E6E9EF] text-[#6D6C80] 
+                                
+                                // استایل حالت هاور
+                                hover:bg-[#5751E1] hover:text-[#FFFFFF]
+                            `}
+                        >
+                            {tab}
+                        </button>
+                    ))}
+                </div>
+
                 <p className="text-sm text-gray-500 mb-2">
                     یکی از بزرگ‌ترین چالش‌ها در تیم‌های محصول، تفاوت دیدگاه‌ها و تعارضات موجود بین طراحان و مهندسان است.
                 </p>
