@@ -40,7 +40,7 @@ function TechnologyList() {
     
     return (
         <section>
-            <h2> لیست تکنولوژی‌های ا</h2>
+            {/* <h2> لیست تکنولوژی‌های ا</h2> */}
             {technologies.length === 0 ? (
                 <p>هیچ تکنولوژی‌ای یافت نشد</p>
             ) : (
