@@ -1,9 +1,10 @@
 import React from 'react';
 import cardImage from '../../assets/Courses/MainCourses/courses_details.jpg.svg';  
+import TextSidebar from './TextSidebar';
 
 const CardSidebar = () => {
     return (
-        <div className="max-w-4xl bg-white rounded-xl shadow-lg overflow-hidden my-10 border border-gray-100">
+        <div className="lg:max-w-4xl md:max-w-4xl bg-white rounded-xl shadow-lg overflow-hidden my-10 border border-gray-100">
             <div className="relative ">
                 <img 
                     className="w-full h-auto object-cover rounded-t-xl" 
@@ -43,7 +44,7 @@ const CardSidebar = () => {
                         </svg>
                     </div>
 
-                    <div className="flex items-center pt-2">
+                    <div className="flex items-center pt-2 pr-3">
                         <span className="mr-1">24/07/2024</span>
                         <svg className="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd"></path></svg>
                     </div>
@@ -54,7 +55,7 @@ const CardSidebar = () => {
                     </div>
                 </div>
                     
-                <div className="flex justify-end space-x-3  mb-5 mt-8 border-b border-gray-200 pb-7"> 
+                <div className="flex justify-end space-x-3  mt-8  pb-7 "> 
                     
                     {['نظرات کاربران', 'مربیان', 'برنامه تحصیلی', 'بررسی اجمالی'].reverse().map((tab) => (
                         <button
@@ -75,13 +76,8 @@ const CardSidebar = () => {
                     ))}
                 </div>
 
-                <p className="text-sm text-gray-500 mb-2">
-                    یکی از بزرگ‌ترین چالش‌ها در تیم‌های محصول، تفاوت دیدگاه‌ها و تعارضات موجود بین طراحان و مهندسان است.
-                </p>
-                
-                <p className="text-sm text-gray-500">
-                    این دوره به مدیران محصول، طراحان و توسعه‌دهندگان کمک می‌کند تا با درک مشترک از اهداف، فرآیندها و ابزارها، به صورت هماهنگ‌تر کار کنند.
-                </p>
+                <TextSidebar/>
+               
             </div>
         </div>
     );
