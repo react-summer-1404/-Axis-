@@ -3,6 +3,7 @@ import HeaderDetails from './CoursesDetails/HeaderDetails'
 import Sidebar from './CoursesDetails/Sidebar'
 import CardSidebar from './CoursesDetails/CardSidebar'
 
+
 const CoursesDetails = () => {
   return (
     <div>
@@ -10,7 +11,7 @@ const CoursesDetails = () => {
     <div className='flex justify-end gap-11'> 
     <CardSidebar/>
     <Sidebar/>
-    
+  
     </div>
     </div>
   )

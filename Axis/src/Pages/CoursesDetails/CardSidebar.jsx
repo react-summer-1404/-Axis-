@@ -1,8 +1,11 @@
-import React from 'react';
+// import React from 'react';
 import cardImage from '../../assets/Courses/MainCourses/courses_details.jpg.svg';  
 import TextSidebar from './TextSidebar';
+import React, { useState } from 'react';
+
 
 const CardSidebar = () => {
+    const [activeTab, setActiveTab] = useState('بررسی اجمالی');
     return (
         <div className="lg:max-w-4xl md:max-w-4xl bg-white rounded-xl shadow-lg overflow-hidden my-10 border border-gray-100">
             <div className="relative ">
@@ -57,27 +60,53 @@ const CardSidebar = () => {
                     
                 <div className="flex justify-end space-x-3  mt-8  pb-7 "> 
                     
-                    {['نظرات کاربران', 'مربیان', 'برنامه تحصیلی', 'بررسی اجمالی'].reverse().map((tab) => (
+                    {['بررسی اجمالی', 'برنامه تحصیلی', 'مربیان', 'نظرات کاربران'].reverse().map((tab) => (
                         <button
                             key={tab}
+                            onClick={() => setActiveTab(tab)}
                             className={`
                                 text-sm font-medium w-28 p-2 rounded-full transition duration-150 ease-in-out 
                                 whitespace-nowrap focus:outline-none 
                                 
-                                // استایل حالت عادی
-                                bg-[#E6E9EF] text-[#6D6C80] 
-                                
-                                // استایل حالت هاور
-                                hover:bg-[#5751E1] hover:text-[#FFFFFF]
-                            `}
-                        >
+                                ${activeTab === tab 
+                                    ? 'bg-[#5751E1] text-[#FFFFFF] shadow-md' // *استایل تب فعال: *
+                                    : 'bg-[#E6E9EF] text-[#6D6C80]'        // استایل حالت عادی
+                                }
+                                 `}
+                                >
                             {tab}
                         </button>
                     ))}
                 </div>
+             
+        {activeTab === 'بررسی اجمالی' && (
+         <TextSidebar/>
+          )}
 
-                <TextSidebar/>
-               
+                <div className="max-w-sm md:max-w-2xl lg:max-w-4xl mx-auto flex justify-between items-center mt-8 px-2 md:px-0">
+                <div className="flex space-x-2 pl-2">
+                    
+                  {/* دکمه راست */}
+                    <button className="w-10 h-10 rounded-full bg-[#5751E1] hover:bg-blue-700 text-white flex items-center justify-center transition duration-150 ease-in-out shadow-md">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+
+                  {/* چپ */}
+                    <button className="w-10 h-10 rounded-full bg-[#5751E1] hover:bg-indigo-700 text-white flex items-center justify-center transition duration-150 ease-in-out shadow-md">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+
+                </div>
+
+                <div className="text-lg font-bold px-6 py-2 rounded-full bg-yellow-400 text-gray-800 shadow-md cursor-pointer transition duration-150 ease-in-out hover:bg-yellow-500">
+                    دوره‌های مرتبط
+                </div>
+            </div>
+            
             </div>
         </div>
     );
