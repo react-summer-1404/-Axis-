@@ -2,10 +2,12 @@
 import cardImage from '../../assets/Courses/MainCourses/courses_details.jpg.svg';  
 import TextSidebar from './TextSidebar';
 import React, { useState } from 'react';
-
-
+import UserAccount from '../../assets/Courses/iconCourses/div.blog__post-author-thumb.svg'
+import Marymam from '../../assets/Courses/iconCourses/comment01.png (1).svg'
+import Amir from '../../assets/Courses/iconCourses/List → Item → comment02.png.svg'
 const CardSidebar = () => {
     const [activeTab, setActiveTab] = useState('بررسی اجمالی');
+    
     return (
         <div className="lg:max-w-4xl md:max-w-4xl bg-white rounded-xl shadow-lg overflow-hidden my-10 border border-gray-100">
             <div className="relative ">
@@ -83,17 +85,131 @@ const CardSidebar = () => {
          <TextSidebar/>
           )}
 
+
+{activeTab === 'نظرات کاربران' && (
+                        <div className="content-reviews">
+                            
+                            <div className="flex flex-row-reverse items-start bg-[#F7F7FA] p-6 rounded-lg mb-8 ml-3" dir="ltr">
+        
+        <div className="flex-shrink-0 size-20 mt-6">
+         <img src={UserAccount}/>
+            
+        </div>
+
+        <div className="text-right flex-grow pr-4"> 
+            
+            <p className="text-sm text-gray-600 mb-1">نویسنده</p>
+            
+            <p className="text-xl font-extrabold text-gray-900 mb-2">محسن</p>
+            
+            <p className="text-sm text-gray-600 leading-relaxed">
+                مهندس کامپیوتر- نرم‌افزار از دانشگاه تربیت دبیر شهید رجایی هستند. ایشان شش سال سابقه برنامه‌نویسی اندروید دارند و تاکنون برنامه‌های موفق و با کیفیتی را در مارکت‌های مطرح ایرانی منتشر کرده‌اند و پیوسته به دنبال یادگیری و کسب دانش بیشتر در این زمینه هستند.
+            </p>
+        </div>
+        
+    </div>
+        /*  پایان کارت محسن ه  */
+                        
+
+                            /* نظرات */
+                            <h3 className="text-xl font-bold text-gray-800 mb-6 mt-8">02 نظر</h3>
+                            
+                            /* (مریم) */
+                            <div className="flex flex-row-reverse items-start border-b border-gray-100 pb-4 mb-4" dir="ltr">
+    
+                                /* عکس پروفایل مریم */
+                                <div className="flex-shrink-0">
+                                    
+                                </div>
+                                <div className="flex-shrink-0 size-16 mt-6 ml-2">
+                                    <img src={Marymam}/>
+                                        
+                                    </div>
+                                /* اطلاعات متنی مریم */
+                                <div className="text-right flex-grow pl-4" dir='rtl'>
+                                    <div className="flex justify-between items-center mb-1"> 
+                                    <p className="text-lg font-bold text-gray-900">مریم</p>
+                                    <p className="text-xs text-gray-400 mt-1 mb-2">21 تیر 1395</p>
+                                    </div>
+                                    <p className="text-sm text-gray-700 leading-relaxed mb-2">
+                                    البته در اکثر سایت‌های حرفه‌ای، از چند زبان برنامه‌نویسی استفاده می‌شود که هر کدام وظیفه خاصی را انجام می‌دهند. زبان HTML از جمله پرکاربردترین زبان‌ها است، که در اکثر سایت‌ها به شکل مستقل یا ترکیبی با سایر زبان‌ها استفاده شده است.         
+                                    </p>
+                                   
+                                    <button className="text-xs bg-gray-100 text-indigo-600 px-3 py-1 rounded-md hover:bg-gray-200 transition duration-150  shadow-sm mt-0">
+                                        پاسخ
+                                    </button>
+                                    
+                                    <div className="flex items-center justify-end text-xs text-gray-500 cursor-pointer">
+                                        <span className="ml-3">369 👍</span>
+                                        <span className="ml-3">71 👎</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            /* (امیر) */
+                            <div  className="flex flex-row-reverse items-start border-b border-gray-100 pb-4 mb-4" dir="ltr">
+                            <div className="flex-shrink-0">
+                                    
+                                    </div>
+                                    <div className="flex-shrink-0 size-16 mt-6 ml-2">
+                                        <img src={Amir}/>
+                                            
+                                        </div>
+                                <div  className="text-right flex-grow pl-4" dir='rtl'>
+                                    <div className="flex justify-between items-center mb-1"> 
+                                     <p className="text-lg font-bold text-gray-900">امیر</p>
+                                    <p className="text-xs text-gray-400 mt-1 mb-2">21 تیر 1395</p>
+                                    </div>
+                                    <p className="text-sm text-gray-700 leading-relaxed mb-2">
+                                    البته در اکثر سایت‌های حرفه‌ای، از چند زبان برنامه‌نویسی استفاده می‌شود که هر کدام وظیفه خاصی را انجام می‌دهند. زبان HTML از جمله پرکاربردترین زبان‌ها است، که در اکثر سایت‌ها به شکل مستقل یا ترکیبی با سایر زبان‌ها استفاده شده است.
+                                    </p>
+                                     
+                                    <button className="text-xs bg-gray-100 text-indigo-600 px-3 py-1 rounded-md hover:bg-gray-200 transition duration-150  shadow-sm mt-0">
+                                        پاسخ
+                                    </button>
+                                    <div className="flex items-center justify-end text-xs text-gray-500 cursor-pointer">
+                                        <span className="ml-3">150 👍</span>
+                                        <span className="ml-3">71 👎</span>
+                                    </div>
+                                </div>
+                                <div className="flex-shrink-0 mr-4">
+                                </div>
+                            </div>
+
+                            /* فرم ارسال نظر */
+                            <div className=" bg-[#F7F7FA] ml-2 p-4 rounded-lg">
+                                <h3 className="text-lg font-bold text-gray-800 mb-4">ارسال نظر</h3>
+                                <div className="text-right text-sm text-gray-600 mb-2">
+                                    <p>عنوان پیام</p>
+                                    <input type="text" className="w-full border border-gray-300 p-2 rounded mt-1 focus:ring-blue-500 focus:border-blue-500" placeholder="..." dir="rtl" />
+                                </div>
+                                <div className="text-right text-sm text-gray-600 mb-4">
+                                    <p>توضیحات بیشتر</p>
+                                    <textarea className="w-full border border-gray-300 p-2 rounded mt-1 h-32 focus:ring-blue-500 focus:border-blue-500" placeholder="..." dir="rtl"></textarea>
+                                </div>
+                                <div className="flex justify-end items-center">
+                                    <p className="text-xs text-gray-500 mr-3">نظر شما پس از تأیید توسط ادمین ثبت خواهد شد</p>
+                                    <button className="bg-yellow-500 hover:bg-yellow-600 text-gray-800 font-bold py-2 px-6 rounded-full transition duration-150 shadow-md border-2 border-gray-900">
+                                        ارسال نظر
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    )}
+                    /* پایان محتوای تب نظرات کاربران */
+
                 <div className="max-w-sm md:max-w-2xl lg:max-w-4xl mx-auto flex justify-between items-center mt-8 px-2 md:px-0">
                 <div className="flex space-x-2 pl-2">
                     
-                  {/* دکمه راست */}
+                /* دکمه راست */
                     <button className="w-10 h-10 rounded-full bg-[#5751E1] hover:bg-blue-700 text-white flex items-center justify-center transition duration-150 ease-in-out shadow-md">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path>
                         </svg>
                     </button>
 
-                  {/* چپ */}
+                  /* چپ */
                     <button className="w-10 h-10 rounded-full bg-[#5751E1] hover:bg-indigo-700 text-white flex items-center justify-center transition duration-150 ease-in-out shadow-md">
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
