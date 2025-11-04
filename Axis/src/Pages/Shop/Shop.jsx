@@ -1,9 +1,13 @@
 import React from 'react'
 import HeaderShop from './HeaderShop'
+import ContentShop from './ContentShop'
 
 const Shop = () => {
   return (
- <HeaderShop/>
+    <div>
+    <HeaderShop/>
+    <ContentShop/>
+    </div>
   )
 }
 
