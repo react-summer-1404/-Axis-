@@ -91,7 +91,7 @@ const Navbar = () => {
           
           {/* آیکون‌ها و دکمه حساب کاربری  */}
           <div className='flex items-center gap-4 order-1 lg:order-none'>
-             <img src={Header} className='size-10' alt="Header icon"/> 
+            <Link to='/Shop'>  <img src={Header} className='size-10' alt="Header icon"/> </Link>
              <img src={Like} className='size-10' alt="Like icon"/> 
             <ThemeToggle/>
             <div className='border w-36 h-11 rounded-full pt-2 bg-[#FFC224] font-bold text-center border-[#06235B30] cursor-pointer'>
