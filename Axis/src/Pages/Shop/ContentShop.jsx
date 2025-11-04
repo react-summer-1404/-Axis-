@@ -3,7 +3,7 @@ import React from 'react'
 const ContentShop = () => {
   return (
     <div dir='rtl'> 
-   <diV className=' flex justify-between relative py-10 top-8 pr-[20%] pl-[20%]'>
+   <diV className=' flex justify-between relative py-10 top-8 pr-[20%] pl-[6%]'>
    <span className='dark:text-gray-200'> نمایش
           <span  className="text-indigo-600 font-semibold"> 6 </span> 
             نتیجه در کل
@@ -16,9 +16,30 @@ const ContentShop = () => {
           />
           </div>
           </span>
+
+          <button
+      className="
+     h-10
+      p-3
+        text-xs font-bold
+        rounded-full
+        text-white 
+        bg-indigo-700 
+        hover:bg-indigo-600 
+        focus:outline-none focus:ring-1 focus:ring-indigo-300 
+        shadow-sm
+      "
+    
+      style={{ fontFamily: 'Vazirmatn, Tahoma, sans-serif' }}
+    >
+      خالی کردن سبد
+    </button>
+
    </diV>
    </div>
   )
 }
 
 export default ContentShop
+
+
