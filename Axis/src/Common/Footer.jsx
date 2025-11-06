@@ -73,12 +73,13 @@ const Footer = () => {
 
         <div>
           <h3 className="text-white text-lg font-semibold mb-4">آکادمی </h3>
-          <p className="text-sm leading-7 mb-4">
-            مکانی برای یادگیری مهارت‌های کار از راه دور، آموزش مهارت‌های دیجیتال
-            و پیشرفت شغلی در دنیای امروز.
+          <p className="text-sm leading-7 mb-4">هنگامی که یک چاپگر ناشناخته گالی از
+را تایپ کرده و آن را درهم می‌زنید تا نمونه‌ای بسازد
+کتابت دارد.
           </p>
-          <p className="text-sm">آدرس: ساری، جاده دریا، ساختمان سپهر، طبقه ۲</p>
-          <p className="text-sm mt-1">تلفن: </p>
+          <p className="text-sm">استان مازندران، علیوک، جاده فرح آباد، H3X7+5V3، ایران 
+            ۲</p>
+          <p className="text-sm mt-1">تلفن:+98 9999999999 </p>
         </div>
       </div>
 
