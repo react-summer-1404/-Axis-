@@ -4,7 +4,7 @@ import { useState } from 'react';
 const PriceFilter = () => {
     const [price, setPrice] = useState(0);
   return (
-    <div className="flex flex-col items-start gap-2 text-right  bg-[#F7F7F9] rounded-2xl shadow p-4">
+    <div className="flex flex-col items-start gap-2 text-right  bg-[#F7F7F9] rounded-2xl shadow p-4 dark:bg-[#cbcbed]">
     <h2 className="text-base font-bold mb-3">قیمت</h2>
     <div className="w-full flex flex-col gap-1">
       <input

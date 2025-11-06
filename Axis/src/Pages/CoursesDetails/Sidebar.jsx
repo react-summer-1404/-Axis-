@@ -37,7 +37,7 @@ const Sidebar = () => {
   return (
    
     <div >
-    <div className="w-full lg:w-80 lg:mr-24 lg:mt-10 p-4 space-y-6 lg:sticky lg:top-8 border border-gray-300 rounded-xl" dir="rtl">
+    <div className="w-full lg:w-80 lg:mr-24 lg:mt-10 p-4 space-y-6 lg:sticky lg:top-8 border border-gray-300 rounded-xl dark:border-blue-950" dir="rtl">
       
       {/* { Course Price */} 
       <div className="bg-[#5751E1] text-white rounded-xl p-5 shadow-lg">
@@ -46,7 +46,7 @@ const Sidebar = () => {
       </div>
 
       {/* { Course Details */} 
-      <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
+      <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 ">
         
         {/* Section */}
         <h3 className="text-lg font-bold text-gray-800 mb-4 border-b pb-2">دوره شامل:</h3>

@@ -2,7 +2,7 @@ import React from 'react'
 
 const RatingSection = () => {
   return (
-    <div className="flex flex-col items-start gap-1 text-right bg-[#F7F7F9] h-24 rounded-2xl shadow p-4">
+    <div className="flex flex-col items-start gap-1 text-right bg-[#F7F7F9] h-24 rounded-2xl shadow p-4 dark:bg-[#cbcbed]">
       <h2 className="text-base font-bold mb-3">رتبه بندی ها</h2>
       <div className="flex items-center gap-1">
         {[...Array(5)].map((_, i) => (

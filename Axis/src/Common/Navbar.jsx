@@ -47,7 +47,7 @@ const Navbar = () => {
         </select>
         <input type='search' placeholder='جستجو برای دوره...' dir='rtl' className='flex-grow px-2 focus:outline-none dark:bg-slate-100'/>
         <img src={ImgIcon} className='w-5 h-5 ml-2  absolute  right-0 mt-1  mr-3'   />
-         <img src={Button} className='size-11' />
+         <img src={Button} className='size-12' />
       </div>
     </div>
   );
@@ -83,7 +83,7 @@ const Navbar = () => {
               {NavLinks}
             </div>
             
-            {/* نوار جستجو در کنار منو */}
+            {/* نوار جستجوو */}
             <div className='ml-12'>
               {SearchBox}
             </div>

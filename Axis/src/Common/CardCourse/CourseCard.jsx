@@ -11,9 +11,9 @@ const CourseCard = ({ course }) => {
   if (!course) return null;
 
   return (
-    <div className="max-w-100 relative bottom-14 left-5 m-4 md:max-w-sm mx-auto bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden  border border-gray-100 dark:bg-gray-200 dark:border-[#ffff] dark:hover:shadow-gray-600">
+    <div className="max-w-100 relative bottom-14 left-5 m-4 md:max-w-sm mx-auto bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden  border border-gray-100 dark:bg-blue-950 dark:border-blue-950 dark:hover:shadow-gray-600 ">
       {/* بخش تصویر */}
-      <div className="relative  pr-2 pl-2 pt-3 pb-3 sm:h-56 bg-gradient-to-r overflow-hidden border rounded-md">
+      <div className="relative  pr-2 pl-2 pt-3 pb-3 sm:h-56 bg-gradient-to-r overflow-hidden border rounded-md dark:border-blue-950">
         <img
           className="w-full h-full object-cover opacity-80"
           src={CoursesImg}
@@ -27,17 +27,17 @@ const CourseCard = ({ course }) => {
       {/* بخش اطلاعات */}
       <div className="p-4 sm:p-5 text-right space-y-3">
         {/* عنوان دوره */}
-        <h2 className=" font-bold text-black">
+        <h2 className=" font-bold text-black dark:text-white">
           {course.title}
         </h2>
 
         {/* برچسب ها و رتبه بندی */}
         <div className="flex items-center justify-between text-sm">
           <div className="flex space-x-2 space-x-reverse">
-            <span className="px-3 py-1 bg-[#EFEFF1] text-dark rounded-full font-medium dark:bg-[#EFEFF1] text-[#161439]">
+            <span className="px-3 py-1 bg-[#EFEFF1] text-dark rounded-full font-medium dark:bg-[#cbcbed] text-[#161439]">
               {course.level} {/* مبتدی */}
             </span>
-            <span className="px-3 py-1 bg-[#EFEFF1] text-dark rounded-full font-medium dark:bg-[#EFEFF1] text-[#161439]">
+            <span className="px-3 py-1 bg-[#EFEFF1] text-dark rounded-full font-medium dark:bg-[#cbcbed] text-[#161439]">
               {course.type} {/* بک اند */}
             </span>
           </div>
@@ -74,7 +74,7 @@ const CourseCard = ({ course }) => {
           <div className="flex items-center space-x-4 space-x-reverse text-sm font-semibold">
             {/* تعداد لایک و دیسلایک */}
             <div className="flex items-center">
-            <button className="flex items-center p-2 bg-gray-300 rounded-lg text-black hover:bg-gray-400 transition dark:bg-gray-200 dark:hover:bg-gray-300">
+            <button className="flex items-center p-2 bg-gray-300 rounded-lg text-black hover:bg-gray-400 transition dark:bg-[#cbcbed] dark:hover:bg-gray-300">
                  <span className="ml-1">{course.likes}</span>
                  {/* آیکون شصت رو به بالا */}
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -84,7 +84,7 @@ const CourseCard = ({ course }) => {
                  
             </div>
             <div className="flex items-center">
-              <button className="flex items-center p-2 bg-gray-300 rounded-lg text-black hover:bg-gray-400 transition dark:bg-gray-200 dark:hover:bg-gray-300">
+              <button className="flex items-center p-2 bg-gray-300 rounded-lg text-black hover:bg-gray-400 transition dark:bg-[#cbcbed] dark:hover:bg-gray-300">
                 <span className="ml-1">{course.dislikes}</span>
                 {/* آیکون شصت رو به پایین */}
                 <svg className="w-4 h-4 transform rotate-180" fill="currentColor" viewBox="0 0 24 24">

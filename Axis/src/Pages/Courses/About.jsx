@@ -27,9 +27,9 @@ const About = () => {
 
   return (
     <div>
-          <aside className="w-full md:w-72 flex flex-col gap-4 pr-7">
+          <aside className="w-full md:w-72 flex flex-col gap-4 pr-7 ">
           {/* دسته‌بندی‌ها */}
-          <div className="bg-[#F7F7F9] rounded-2xl shadow p-4">
+          <div className="bg-[#F7F7F9] rounded-2xl shadow p-4 dark:bg-[#cbcbed] ">
             <h2 className="text-base font-bold mb-3">دسته‌بندی‌ها</h2>
             <ul className="space-y-2 text-gray-700 text-sm">
              <TechnologyList/>
@@ -46,7 +46,7 @@ const About = () => {
 
             {/* نحوه برگزاری */}
 
-            <div className="bg-[#F7F7F9] rounded-2xl shadow p-4">
+            <div className="bg-[#F7F7F9] rounded-2xl shadow p-4 dark:bg-[#cbcbed]">
             <h2 className="text-base font-bold mb-3">نحوه برگزاری</h2>
             <ul className="space-y-2 text-gray-700 text-sm">
               <CourseTypeList/>
@@ -54,7 +54,7 @@ const About = () => {
           </div>
 
           {/* سطح مهارت */}
-          <div className="bg-[#F7F7F9] rounded-2xl shadow p-4">
+          <div className="bg-[#F7F7F9] rounded-2xl shadow p-4 dark:bg-[#cbcbed]">
             <h2 className="text-base font-bold mb-3"> سطح مهارت</h2>
             <ul className="space-y-2 text-gray-700 text-sm">
               <CourseLevelList/>
@@ -62,7 +62,7 @@ const About = () => {
           </div>
 
               {/* مربیان */}
-              <div className="bg-[#F7F7F9] rounded-2xl shadow p-4">
+              <div className="bg-[#F7F7F9] rounded-2xl shadow p-4 dark:bg-[#cbcbed]">
             <h2 className="text-base font-bold mb-3"> مربیان </h2>
             <ul className="space-y-2 text-gray-700 text-sm">
               <li>
