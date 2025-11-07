@@ -10,20 +10,6 @@ import CourseTypeList from "../../Componets/CourseTypeList";
 const About = () => {
   const [showMore, setShowMore] = useState(false);
 
-  // const categories = [
-  //   "هنر و طراحی (8)",
-  //   "تجارت (12)",
-  //   "علم داده (7)",
-  //   "توسعه (10)",
-  //   "امور مالی (8)",
-  //   "سلامت و تناسب اندام (8)",
-  //   "سبک زندگی (9)",
-  //   "بازاریابی (6)",
-  //   "برنامه‌نویسی موبایل (4)",
-  //   "مدیریت پروژه (5)",
-  // ];
-
-  // const visibleCategories = showMore ? categories : categories.slice(0, 7);
 
   return (
     <div>

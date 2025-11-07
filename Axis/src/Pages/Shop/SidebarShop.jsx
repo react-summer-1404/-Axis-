@@ -23,7 +23,7 @@ const Sidebar = () => {
             viewBox="0 0 24 24" 
             stroke="currentColor" 
             strokeWidth={2}
-            style={{ transform: 'scaleX(-1)' }} // Flip icon for RTL context
+            style={{ transform: 'scaleX(-1)' }} 
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
           </svg>
@@ -34,7 +34,6 @@ const Sidebar = () => {
     
     <hr className="my-3 border-gray-200" />
 
-    {/* Secure Payment Logos (Mockup) */}
     <div className="mb-4">
       <p className="text-gray-700 text-xs font-semibold mb-2">پرداخت امن:</p>
       <div className="flex justify-center space-x-2 space-x-reverse h-6">
@@ -42,10 +41,9 @@ const Sidebar = () => {
       </div>
     </div>
 
-    {/* Payment Button */}
     <button 
       className="w-full flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 rounded-lg transition duration-150 ease-in-out text-sm"
-      // Style for RTL icon direction
+    
       style={{ flexDirection: 'row-reverse' }} 
     >
       <span className="mr-2">اقدام به پرداخت</span>

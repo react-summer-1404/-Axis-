@@ -69,27 +69,27 @@ const Navbar = () => {
   return (
     <div id='' className='bg-white dark:bg-gray-900 shadow-md border-b flex flex-row-reverse sm:flex-row'dir='rtl'>
       <div className='container mx-auto px-4'>
-        {/*دکمه همبرگری، آیکون‌ها، حساب کاربری */}
+       
         <div className='h-[120px] flex items-center justify-between whitespace-nowrap'>
-          {/* لوگو در سمت راست در هر دو حالت */}
+       
           <div className='order-3 lg:order-none'>
             {Logo}
           </div>
 
-          {/* منو، جستجو  */}
+      
           <div className='hidden lg:flex items-center justify-center flex-1 h-full'>
-            {/* منو */}
+     
             <div className='flex flex-row gap-6' dir='rtl'>
               {NavLinks}
             </div>
             
-            {/* نوار جستجوو */}
+      
             <div className='ml-12'>
               {SearchBox}
             </div>
           </div>
           
-          {/* آیکون‌ها و دکمه حساب کاربری  */}
+   
           <div className='flex items-center gap-4 order-1 lg:order-none'>
             <Link to='/Shop'>  <img src={Header} className='size-10' alt="Header icon"/> </Link>
              <img src={Like} className='size-10' alt="Like icon"/> 
@@ -98,7 +98,7 @@ const Navbar = () => {
               حساب کاربری
             </div>
 
-            {/* دکمه همبرگری/بستن در موبایل  */}
+        
             <button
               className='text-gray-800 dark:text-white lg:hidden mr-2'
               onClick={() => setIsOpen(!isOpen)}
@@ -115,12 +115,12 @@ const Navbar = () => {
             isOpen ? 'max-h-screen opacity-100 py-4' : 'max-h-0 opacity-0'
           } border-t`}
         >
-          {/* منوی موبایل (عمودی) */}
+       
           <div className='flex flex-col gap-3 pb-4' dir='rtl'>
             {NavLinks}
           </div>
           
-          {/* نوار جستجوی موبایل */}
+   
           <div className='mb-4'>
             {SearchBox}
           </div>

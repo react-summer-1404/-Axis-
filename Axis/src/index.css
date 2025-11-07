@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* src/index.css یا app.css */
+@font-face {
+    font-family: 'IRANSans';
+    src: url('./fonts/IRANSans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    /* می‌توانید برای نسخه‌های دیگر فونت (بولد، لایت) این بخش را تکرار کنید */
+  }

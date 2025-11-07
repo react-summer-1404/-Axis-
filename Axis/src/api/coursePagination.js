@@ -1,17 +1,22 @@
 
 const STATIC_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50cyI6W3sicGhvbmUiOiIwOTA1IDk2NyAzODA5IiwiaWQiOjczLCJpc1VzZSI6dHJ1ZX1dLCJpYXQiOjE3NjE4MDU2MzksImV4cCI6MTc2MTg0MTYzOX0.qdXnrvDYXN_24wrrXXENsBPK498agFofUFruijeJsjE"; 
 
-const COURSE_LEVEL_API_URL = 'https://sepehracademy.liara.run/CourseLevel/GetAllCourseLevel'; 
+const BASE_URL = 'https://sepehracademy.liara.run/Home/GetCoursesWithPagination'; 
 
 /**
-
-  @returns {Array<Object>} 
+ * 
+ * @param {number} pageNumber 
+ * @param {number} rowsOfPage 
+ * @returns {Object} 
  */
-export async function getCourseLevels() {
+export async function getCoursesWithPagination(pageNumber = 1, rowsOfPage = 12) {
     const token = STATIC_TOKEN; 
+    
+    
+    const fullUrl = `${BASE_URL}?PageNumber=${pageNumber}&RowsOfPage=${rowsOfPage}&SortingCol=Active&SortType=DESC&TechCount=0`;
 
     try {
-        const response = await fetch(COURSE_LEVEL_API_URL, {
+        const response = await fetch(fullUrl, {
             method: 'GET', 
             headers: {
                 'Content-Type': 'application/json',
@@ -20,20 +25,18 @@ export async function getCourseLevels() {
             }
         });
         
-        
-        if (response.status === 401 || response.status === 403) {
-            throw new Error('توکن منقضی یا نامعتبر است. مجدداً توکن را بررسی کنید.');
-        }
-         
         if (!response.ok) {
             throw new Error(`خطای سرور با کد: ${response.status}`);
         }
 
-
-        return response.json(); 
+        
+        const data = await response.json(); 
+        
+        
+        return data; 
         
     } catch (error) {
-        console.error('خطا در فراخوانی API CourseLevel:', error.message);
+        console.error('خطا در دریافت لیست دوره‌ها:', error.message);
         throw error;
     }
 }

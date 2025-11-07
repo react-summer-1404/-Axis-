@@ -50,7 +50,7 @@ const sliderStyles = `
 const Slider = () => {
   return (
     <>
-      {/* ✅ استایل مستقیم درون کامپوننت */}
+     
       <style>{sliderStyles}</style>
 
       <Swiper

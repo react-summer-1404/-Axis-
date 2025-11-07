@@ -5,19 +5,19 @@ const TextSidebar = () => {
     <div className="mt-2 m-10 border rounded-lg p-7 shadow-md dark:border-blue-950">
       
     <h3 className="text-lg font-bold text-gray-800 mb-3 dark:text-white">شرح دوره</h3>
-    <p className="text-sm text-gray-600 mb-4 leading-relaxed dark:text-gray-200">
+    <p className="text-base text-gray-600 mb-4 leading-relaxed dark:text-gray-200">
         امروزه به دلیل آن که ارتباطات فضای مجازی رونق زیادی یافته است، طراحی یک سایت به شکل مناسب و مورد پسند کاربران متفاوت، اهمیت بالایی یافته است. به همین جهت صاحبان سرمایه و کار، برای رونق کار خود به دنبال طراحان حرفه‌ای برای طراحی سایتی مناسب و کارآمد هستند؛ لذا یادگیری روش‌های مناسب و به‌روز طراحی سایت، مورد توجه بسیاری از علاقه‌مندان و کارجویان قرار گرفته است.
     </p>
 
     <h3 className="text-lg font-bold text-gray-800 mt-6 mb-3 dark:text-white">در این دوره چه چیزی یاد خواهید گرفت؟</h3>
-    <p className="text-sm text-gray-600 mb-4 leading-relaxed dark:text-gray-200">
+    <p className="text-base text-gray-600 mb-4 leading-relaxed dark:text-gray-200">
     در حال حاضر جاوا اسکریپت یکی از محبوب‌ترین زبان‌های برنامه‌نویسی وب شناخته می‌شود و تقریبا
      توسط تمام مرورگرهای وب پشتیبانی می‌شود
      این زبان به طور معمول با اچ تی ام ال و سی اس اس برای ایجاد صفحات وب تعاملی و پویا به کار می‌رود
     </p>
 
     <ul className="space-y-3 mt-4 font-bold">
-        {/* آیکون‌ها به شکل دایره زرد و تیک سفید شبیه‌سازی شدند */}
+      
         {[
             'با رنگ و گرادیان و شبکه‌ کار کنید', 
             'تمام میانبرهای مفید', 
@@ -35,8 +35,8 @@ const TextSidebar = () => {
         ))}
     </ul>
     
-    {/* پاراگراف آخر توضیحات */}
-    <p className="text-sm text-gray-600 mt-6 leading-relaxed dark:text-gray-200">
+   
+    <p className="text-base text-gray-600 mt-6 leading-relaxed dark:text-gray-200">
         امروزه به دلیل آن که ارتباطات فضای مجازی رونق زیادی یافته است، طراحی یک سایت به شکل مناسب و مورد پسند کاربران متفاوت، اهمیت بالایی یافته است. به همین جهت صاحبان سرمایه و کار، برای رونق کار خود به دنبال طراحان حرفه‌ای برای طراحی سایتی مناسب و کارآمد هستند؛ لذا یادگیری روش‌های مناسب و به‌روز طراحی سایت، مورد توجه بسیاری از علاقه‌مندان و کارجویان قرار گرفته است
     </p>
 

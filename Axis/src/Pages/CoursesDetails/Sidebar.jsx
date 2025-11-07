@@ -71,7 +71,7 @@ const Sidebar = () => {
 
         <hr className="my-6" />
 
-        {/* Section: پرداخت امن */}
+   
         <h3 className="text-md font-bold text-gray-800 mb-3">پرداخت امن:</h3>
         <div className="flex justify-center p-3 border rounded-lg bg-gray-50">
           <span className="text-xs text-gray-500">
@@ -81,7 +81,6 @@ const Sidebar = () => {
 
         <hr className="my-6" />
 
-        {/* Section: به اشتراک بگذارید */}
         <h3 className="text-md font-bold text-gray-800 mb-3">این دوره را به اشتراک بگذارید:</h3>
         <div className="flex justify-center space-x-2 space-x-reverse">
           {socialLinks.map((social, index) => (
@@ -99,7 +98,7 @@ const Sidebar = () => {
 
         <hr className="my-6" />
 
-        {/* Button: ثبت نام در دوره */}
+     
         <button className="w-full flex items-center justify-center p-3 bg-yellow-500 text-gray-900 rounded-full font-bold text-lg hover:bg-yellow-600 transition duration-300 shadow-md">
           <span className="ml-2">ثبت نام در دوره</span>
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

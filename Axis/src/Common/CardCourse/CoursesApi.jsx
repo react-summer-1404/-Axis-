@@ -34,12 +34,12 @@ const CoursesApi = () => {
     <div className="container mx-auto p-4">
     <h1 className="text-3xl font-bold mb-6 text-center dark:text-white"></h1>
     
-    {/* نمایش دوره‌ Grid ریسپانسیو */}
+  
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-6">
       {courses.map(course => (
         <CourseCard key={course.id} course={course} />
       ))}
-      {/* یک کارت Placeholder  شبیه سازی تصویر اصلی */}
+    
       {courses.length === 0 && <CourseCard course={{
           id: 'mock',
           title: "طراحی کامل گرافیک برای مبتدی ها",

@@ -4,6 +4,7 @@ import Tablist2 from '../../assets/Courses/iconCourses/Tablist → Tab (1).svg'
 import About from './About'
 import CourseCard from '../../Common/CardCourse/CourseCard'
 import CoursesApi from '../../Common/CardCourse/CoursesApi'
+import CourseCards from '../../Common/CardCourse/CourseCards'
 
 const CoursesContent = () => {
   return (
@@ -60,7 +61,8 @@ const CoursesContent = () => {
     <div className='flex justify-start gap-10'>   
        <About/> 
        <CourseCard/>
-       <CoursesApi/>
+       <CourseCards/>
+       {/* <CoursesApi/> */}
        </div>
     
     
