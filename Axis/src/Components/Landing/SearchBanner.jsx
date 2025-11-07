@@ -5,14 +5,14 @@ const SearchBanner = () => {
   return (
     <section className="bg-[#4F46E5] text-white py-16 px-6 md:px-20">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-        {/* بخش متن و فرم */}
+     
         <div className="flex flex-col items-start space-y-6">
-          {/* تیتر */}
+ 
           <h2 className="text-2xl md:text-3xl font-semibold leading-relaxed">
             می‌خواهید از دوره‌های جدید در جریان باشید؟
           </h2>
 
-          {/* فیلد ایمیل و دکمه در یک خط */}
+      
           <div className="flex flex-col sm:flex-row-reverse items-center w-full max-w-md gap-3">
             <input
               type="email"
@@ -25,7 +25,7 @@ const SearchBanner = () => {
           </div>
         </div>
 
-        {/* بخش تصویر */}
+ 
         <div className="flex justify-center md:justify-end">
           <img
             src={newsletter}

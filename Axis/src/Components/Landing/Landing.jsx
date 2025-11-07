@@ -10,6 +10,7 @@ import MainSection from './MainSection';
 import LearningSection from './LearningSection';
 import NewsSection from './NewsSection';
 
+
 const Landing = () => {
   return (
     <div>

@@ -7,7 +7,7 @@ const MainBanner = () => {
     <section className="bg-white-50 py-16 px-6 lg:px-20">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         
-        {/* ===== سمت چپ: متن ===== */}
+   
         
         <div className="text-center md:text-right">
            
@@ -47,7 +47,7 @@ const MainBanner = () => {
     </section>
         </div>
 
-        {/* ===== سمت راست: عکس ===== */}
+      
         <div className="flex justify-center">
           
             <img

@@ -26,7 +26,7 @@ const MainSection = () => {
           ].map((q, i) => (
             <details
               key={i}
-              className="group bg-white rounded-2xl p-4 shadow-sm cursor-pointer border border-gray-100"
+              className="group bg-white rounded-2xl p-4 shadow-sm cursor-pointer border border-gray-100 text-right"
             >
               <summary className="flex items-center justify-between text-gray-800 font-medium">
                 {q}

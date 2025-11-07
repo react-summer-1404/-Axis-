@@ -1,0 +1,43 @@
+import React from "react";
+import Button from "../../Common/button";
+import Heropic from "../../assets/Landing/hero.svg"
+
+const HeroSection = () => {
+  return (
+   <section className="flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-12 bg-gradient-to-r from-[#f8f5ff] to-white">
+
+
+  <div className="flex-1 flex justify-center md:justify-start">
+    <img
+      src={Heropic}
+      alt="banner"
+      className="w-[300px] md:w-[500px] h-auto"
+    />
+  </div>
+
+
+  <div className="flex-1 text-right mt-8 md:mt-0 md:pr-10">
+    <h1 className="text-3xl md:text-5xl font-bold text-gray-800 leading-snug">
+      هرگز از{" "}
+      <span className="bg-[#FFC224] text-gray-900 px-2 py-1 rounded">
+        یادگیری
+      </span>{" "}
+      دست نکشید، زندگی هرگز از آموزش دست نمی‌کشد
+    </h1>
+
+    <p className="mt-4 text-gray-600 text-lg md:text-xl">
+      هر سفر آموزشی و یادگیری، منحصر به فرد است؛ ما به شما کمک خواهیم کرد.
+    </p>
+
+    <div className="mt-6">
+      <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full transition">
+        رایگان آزمایش کنید
+      </button>
+    </div>
+  </div>
+</section>
+
+  );
+};
+
+export default HeroSection;
