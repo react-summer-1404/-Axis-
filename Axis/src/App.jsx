@@ -1,5 +1,5 @@
 import Layout from './Layout/Layout'
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import { createBrowserRouter, RouterProvider ,  } from "react-router-dom"
 import Courses from './Pages/Courses'
 import Landing from './Componets/Landing'
 import CoursesDetails from './Pages/CoursesDetails';
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     children:[
       {index: true, element: <Landing />},
       {path: "/courses", element: <Courses />},
-      {path: "/coursesDetails" , element: <CoursesDetails/> },
+      {path: "/coursesDetails/:id" , element: <CoursesDetails/> },
       {path : "/Shop" , element:<Shop/>}
      
     ],

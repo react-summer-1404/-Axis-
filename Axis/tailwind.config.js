@@ -6,7 +6,9 @@ export default {
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: { 'sans': ['IRANSans', 'Arial', 'sans-serif']}
+    },
   },
   plugins: [],
 }
