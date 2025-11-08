@@ -3,7 +3,7 @@ import illustration from "../assets/Auth/illustration.svg";
 
 export default function AuthLayout({ title = "ثبت نام", subtitle, children }) {
   return (
-    <div className="min-h-screen flex justify-center items-center bg-[#5751E1] dark:bg[#1d044bff] p-4">
+    <div className="min-h-screen flex justify-center items-center bg-[#5751E1]  p-4">
  
       <div className="flex flex-col md:flex-row w-full max-w-4xl bg-white rounded-3xl shadow-2xl overflow-hidden">
         

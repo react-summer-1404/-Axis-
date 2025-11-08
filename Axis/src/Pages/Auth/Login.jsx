@@ -1,18 +1,18 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import AuthLayout from "../../Components/AuthLayout";
+import PasswordInput from "../../Components/PasswordInput";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // توکن ثابت
-  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50cyI6W3sicGhvbmUiOiIwOTExNDE3MTMwNiIsImlkIjoxMzAsImlzVXNlIjp0cnVlfV0sImlhdCI6MTc2MjU0MzA0NywiZXhwIjoxNzYyNTc5MDQ3fQ.MsjPGiBK4t0EcawuAqs3r2GUoalejOTil9coB5ggKE4";
+  const token =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50cyI6W3sicGhvbmUiOiIwOTExNDE3MTMwNiIsImlkIjoxMzAsImlzVXNlIjp0cnVlfV0sImlhdCI6MTc2MjU0MzA0NywiZXhwIjoxNzYyNTc5MDQ3fQ.MsjPGiBK4t0EcawuAqs3r2GUoalejOTil9coB5ggKE4";
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (email && password) {
-      // ذخیره توکن در LocalStorage
       localStorage.setItem("token", token);
       alert("توکن ذخیره شد!");
     } else {
@@ -31,14 +31,13 @@ export default function Login() {
           placeholder="ایمیل"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="border rounded-full px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="border rounded-full px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
-        <input
-          type="password"
+        <PasswordInput
           placeholder="رمز عبور"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="border rounded-full px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full"
         />
         <button
           type="submit"

@@ -1,35 +1,32 @@
 import { useNavigate } from "react-router-dom";
 import AuthLayout from "../../Components/AuthLayout";
+import PasswordInput from "../../Components/PasswordInput";
 
 export default function ForgotPassword() {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // جلوگیری از رفرش شدن صفحه
-
-    // اینجا بعداً می‌تونی API واقعی ارسال کد رو اضافه کنی
-    console.log("کد بازیابی ارسال شد ✅");
-
-    // انتقال به صفحه تایید کد
-    navigate("/verify-code");
+    e.preventDefault();
+    console.log("رمز جدید ثبت شد");
+    navigate("/login");
   };
 
   return (
     <AuthLayout
-      title="بازیابی رمز عبور"
-      subtitle="ایمیل یا شماره خود را وارد کنید تا لینک بازیابی برای شما ارسال شود"
+      title="تغییر رمز عبور"
+      subtitle="رمز جدید خود را وارد کنید"
     >
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <input
-          type="text"
-          placeholder="ایمیل "
-          className="border rounded-full px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
+        <PasswordInput placeholder="رمز عبور جدید" />
+
+        
+        <PasswordInput placeholder="تکرار رمز عبور" />
+
         <button
           type="submit"
           className="bg-[#f5ca0cff] text-black rounded-full py-2 hover:bg-[#f3b226ff] transition"
         >
-          ارسال کد بازیابی
+          ثبت رمز جدید
         </button>
       </form>
 

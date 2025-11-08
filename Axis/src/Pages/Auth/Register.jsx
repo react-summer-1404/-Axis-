@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import AuthLayout from "../../Components/AuthLayout";
 import { sendVerifyMessage } from "../../Api/Auth/register.js";
+import PasswordInput from "../../Components/PasswordInput";
+
 
 export default function Register() {
   const [email, setEmail] = useState(""); 
