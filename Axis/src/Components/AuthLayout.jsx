@@ -1,10 +1,11 @@
 import React from "react";
 import illustration from "../assets/Auth/illustration.svg";
-
+import home from '../assets/Auth/Frame (1).svg'
+import { Link } from 'react-router-dom'
 export default function AuthLayout({ title = "ثبت نام", subtitle, children }) {
   return (
     <div className="min-h-screen flex justify-center items-center bg-[#5751E1]  p-4">
- 
+
       <div className="flex flex-col md:flex-row w-full max-w-4xl bg-white rounded-3xl shadow-2xl overflow-hidden">
         
    
@@ -21,7 +22,10 @@ export default function AuthLayout({ title = "ثبت نام", subtitle, children
             زندگی هرگز از آموزش دست نمی‌کشد
           </p>
 
-          <div className="mt-8 w-full max-w-xs md:max-w-sm">
+          <div className="mt-8 w-full max-w-xs md:max-w-sm"> 
+            <div className="flex justify-end">
+          <Link to='/'>   <img src={home}/> </Link> 
+          </div>
             <img
               src={illustration}
               alt="Learning illustration"
