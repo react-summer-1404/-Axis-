@@ -3,21 +3,21 @@ import man from '../../assets/Landing/man_mains.svg';
 
 const MainSection = () => {
   return (
-    <section className="flex flex-col md:flex-row items-center justify-between px-8 md:px-20 py-16 bg-gradient-to-br from-[#f8f9ff] to-[#fafaff]">
+    <section className="flex flex-col md:flex-row items-center justify-between px-8 md:px-20 py-16 bg-[white] dark:bg-blue-950">
       
 
       <div className="md:w-1/2 space-y-6 text-right">
         <h4 className="text-indigo-500 font-semibold">سؤالات متداول</h4>
-        <h2 className="text-3xl font-bold text-gray-900 leading-snug">
+        <h2 className="text-3xl font-bold text-gray-900 leading-snug dark:text-white">
           شروع کن تمرین از مربیان <br /> حرفه‌ای جهان
         </h2>
-        <p className="text-gray-500 text-sm leading-relaxed">
+        <p className="text-gray-500 text-sm leading-relaxed  dark:text-white">
   صندوق ورودی مشترک بصری Groove 
   این کار را برای اعضای تیم آسان می کند
 سازماندهی، اولویت بندی و.در این قسمت
         </p>
 
-        <div className="space-y-3 mt-6">
+        <div className="space-y-3 mt-6  dark:text-white">
           {[
             "نامبر وان می خواهد به شما چه چیزی دهد؟",
             "چرا ما را برای تحصیل خود انتخاب کنید؟",

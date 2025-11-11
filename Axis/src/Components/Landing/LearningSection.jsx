@@ -33,7 +33,7 @@ const LearningSection = () => {
 
   return (
     <section className="bg-[#282568]
-text-white py-20 px-8 md:px-20 text-center">
+text-white py-20 px-8 md:px-20 text-center ">
       <h4 className="text-indigo-300 font-medium mb-3">برای یادگیری آماده شوید</h4>
       <h2 className="text-3xl md:text-4xl font-bold mb-4">
         سفر یادگیری خود را از همین امروز شروع کنید
