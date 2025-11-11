@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Exits from '../../assets/Courses/iconCourses/Frame.svg'
 
 const Sidebar = () => {
   return (
@@ -13,10 +13,11 @@ const Sidebar = () => {
                 <img
        
                   alt="کاربر"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover "
                 />
               </div>
-              <h3 className="mt-3 text-lg font-bold">فلان فلانی خوش آمدید</h3>
+              <h3 className="pt-9 text-lg ">فلان فلانی خوش آمدید</h3>
+              <div className="mt-5 w-[267px] h-1 mx-auto rounded-full bg-gradient-to-r from-[#5751E1] via-[#FFC224] to-[#5751E1]"></div>
             </div>
 
             <div className="space-y-2">
@@ -31,14 +32,16 @@ const Sidebar = () => {
               ].map((item) => (
                 <button
                   key={item}
-                  className="w-full text-right py-3 px-4 rounded-xl  flex justify-center transition text-lg"
+                  className="w-full text-right py-2 px-2 rounded-xl  flex justify-center transition text-lg hover:bg-white hover:text-black  "
+                  
                 >
                   {item}
                 </button>
               ))}
             </div>
-            <button className="w-full py-3 px-4 font-medium">
-              خروج از حساب
+            <button className="w-full py-3 px-4 font-medium flex flex-row justify-center gap-2" dir='ltr'>
+            <p> خروج از حساب </p>
+            <img src={Exits}/>  
             </button>
           </aside>
          
