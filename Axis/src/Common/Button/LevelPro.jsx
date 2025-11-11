@@ -9,6 +9,7 @@ const LevelPro = () => {
     <span className="text-white text-xs font-bold px-3 py-1 bg-red-600/80 rounded-lg shadow-md transform rotate-3">
         Laravel Pro
     </span>
+    
     </div>
   )
 }

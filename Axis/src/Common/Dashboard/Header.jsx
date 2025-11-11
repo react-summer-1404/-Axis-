@@ -1,6 +1,7 @@
 import React from 'react'
 import Login from '../../assets/Courses/iconCourses/login btn.svg'
 import Shopping from '../../assets/Courses/iconCourses/Shopping Bag.svg'
+
 const Header = () => {
   return (
     <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700" dir='rtl'>
@@ -33,7 +34,7 @@ const Header = () => {
             alt="حساب کاربری"
           />
         </button>
-
+       
       </div>
 
     </div>
