@@ -6,6 +6,7 @@ import PasswordInput from "../../Components/PasswordInput";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  
 
   const token =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50cyI6W3sicGhvbmUiOiIwOTExNDE3MTMwNiIsImlkIjoxMzAsImlzVXNlIjp0cnVlfV0sImlhdCI6MTc2MjU0MzA0NywiZXhwIjoxNzYyNTc5MDQ3fQ.MsjPGiBK4t0EcawuAqs3r2GUoalejOTil9coB5ggKE4";
@@ -15,6 +16,7 @@ export default function Login() {
     if (email && password) {
       localStorage.setItem("token", token);
       alert("توکن ذخیره شد!");
+
     } else {
       alert("لطفا ایمیل و رمز را وارد کنید!");
     }
