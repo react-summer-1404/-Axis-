@@ -11,6 +11,10 @@ import Login from './Pages/Auth/Login.jsx'
 import Register from './Pages/Auth/Register.jsx'
 import VerifyCode from './Pages/Auth/VerifyCode.jsx';
 import ForgotPassword from './Pages/Auth/ForgetPassword.jsx';
+import { DashboardLayout } from './Layout/DashboardLayout.jsx';
+import Dashboard from './Pages/Dashboard/Dashboard.jsx';
+
+
 
 
 const router = createBrowserRouter([
@@ -23,7 +27,8 @@ const router = createBrowserRouter([
       {path: "/courses", element: <Courses />},
       {path: "/coursesDetails/:id" , element: <CoursesDetails/> },
       {path : "/Shop" , element:<Shop/>},
-      {index:true , element : <Landing/>},
+     
+      
     
     ],
   },
@@ -32,8 +37,19 @@ const router = createBrowserRouter([
   { path: "/register", element: <Register /> },
   { path: "/verify-code", element: <VerifyCode /> },
   { path:"/forgot-password" ,element:<ForgotPassword />},
+   {
+    path: '/Dashboard',
+    element: <DashboardLayout/>,
+    children:[
+      {index:true , element: <Dashboard/>}
+         
+    ]
+   
+   },
+  { path: "*", element: <h1 style={{ textAlign: "center", marginTop: "40px" }}>صفحه مورد نظر یافت نشد </h1> }
 
-   { path: "*", element: <h1 style={{ textAlign: "center", marginTop: "40px" }}>صفحه مورد نظر یافت نشد </h1> }
+  
+
 ]);
 
 
