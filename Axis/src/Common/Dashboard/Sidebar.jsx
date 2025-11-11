@@ -7,7 +7,7 @@ const Sidebar = () => {
       <div className="container mx-auto mt-6  bg-white rounded-3xl shadow-xl border ring-2 ring-gray-200">
 
         <div className="flex justify-end ">
-          <aside className="w-80  bg-gradient-to-b from-purple-600 to-blue-700 text-white rounded-r-2xl p-6 space-y-14" dir="rtl">
+          <aside className="w-80  bg-[#5751E1] text-white rounded-r-2xl p-6 space-y-14" dir="rtl">
             <div className="text-center">
               <div className="w-20 h-20 mx-auto rounded-full overflow-hidden ring-4 ring-purple-400 ring-offset-2 ring-offset-purple-700">
                 <img
@@ -21,7 +21,8 @@ const Sidebar = () => {
 
             <div className="space-y-2">
               {[
-               
+                "داشبورد",
+                "اطلاعات کاربری",
                 "دوره‌های من",
                 "دوره‌های رزرو شده",
                 "دیدگاه‌های من",
@@ -30,7 +31,7 @@ const Sidebar = () => {
               ].map((item) => (
                 <button
                   key={item}
-                  className="w-full text-right py-3 px-4 rounded-xl bg-white/10 hover:bg-white/20 transition text-sm"
+                  className="w-full text-right py-3 px-4 rounded-xl  flex justify-center transition text-lg"
                 >
                   {item}
                 </button>
