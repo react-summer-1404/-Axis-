@@ -1,5 +1,6 @@
 import React from 'react'
 import Exits from '../../assets/Courses/iconCourses/Frame.svg'
+import Sing from '../../assets/Courses/iconCourses/ax-kartoni-bamazeh-11 (1).svg'
 
 const Sidebar = () => {
   return (
@@ -9,9 +10,9 @@ const Sidebar = () => {
         <div className="flex justify-end ">
           <aside className="w-80  bg-[#5751E1] text-white rounded-r-2xl p-6 space-y-14" dir="rtl">
             <div className="text-center">
-              <div className="w-20 h-20 mx-auto rounded-full overflow-hidden ring-4 ring-purple-400 ring-offset-2 ring-offset-purple-700">
+              <div className="w-20 h-20 mx-auto rounded-full overflow-hidden ring-4 ">
                 <img
-       
+                src={Sing}
                   alt="کاربر"
                   className="w-full h-full object-cover "
                 />
