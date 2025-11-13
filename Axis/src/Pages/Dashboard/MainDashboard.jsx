@@ -80,7 +80,7 @@ const MainDashboard = () => {
           count={2} 
           title={'رزرو کرده‌اید'} 
           iconSrc={shoppingCartIcon} 
-          iconColor={'bg-indigo-600'} 
+       
           countColor={'text-indigo-600'} 
           titleColor={'text-gray-500'} 
         />
@@ -90,7 +90,7 @@ const MainDashboard = () => {
           count={4} 
           title={'شرکت کرده‌اید'} 
           iconSrc={graduationCapIcon} 
-          iconColor={'bg-purple-600'} 
+       
           countColor={'text-purple-600'} 
           titleColor={'text-gray-500'} 
         />
