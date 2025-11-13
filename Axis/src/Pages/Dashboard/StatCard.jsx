@@ -17,8 +17,8 @@ import React from 'react'
           shadow-lg shadow-black/25
           transform transition duration-300 hover:shadow-xl
           border border-gray-100/50 
-        `}>
-          <div className={`text-4xl font-extrabold ${countColor} mb-1`}>{count} دوره</div>
+        `}dir='rtl'>
+          <div className={`text-3xl font-thin ${countColor} mb-1`}>{count} دوره</div>
           <div className={`text-xl font-normal ${titleColor}`}>{title}</div>
         </div>
       </div>
