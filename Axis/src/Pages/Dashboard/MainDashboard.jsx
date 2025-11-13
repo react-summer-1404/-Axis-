@@ -33,7 +33,7 @@ const ProgressCircle = ({ progress }) => {
           cy="60"
           r={radius}
           fill="none"
-          stroke="#f59e0b" 
+          stroke="#FFC224" 
           strokeWidth="10"
           strokeDasharray={circumference}
           strokeDashoffset={offset}
@@ -43,7 +43,7 @@ const ProgressCircle = ({ progress }) => {
       </svg>
 
       <div className="absolute flex flex-col items-center justify-center">
-        <span className="text-4xl font-bold text-gray-800">{progress}%</span>
+        <span className="text-4xl font-bold text-[#5751E1]">{progress}%</span>
       </div>
     </div>
    
@@ -56,7 +56,7 @@ const MainDashboard = () => {
 
   return (
 
-    <div className="p-6 md:p-10 bg-gray-50 font-sans min-h-screen rtl text-right rounded-full">
+    <div className="p-6 md:p-10  font-sans min-h-screen rtl text-right rounded-full">
       <div className="flex justify-end items-center mb-10">
         <div className="flex space-x-3 rtl:space-x-reverse gap-5">
         <button className='size-6'>  <ThemeToggle/> </button>
@@ -67,7 +67,7 @@ const MainDashboard = () => {
       
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6"dir='ltr'>
         
-        <div className="flex flex-col sm:flex-row items-center bg-white p-4 rounded-2xl shadow-xl shadow-black/10"dir='rtl'>
+        <div className="flex flex-col sm:flex-row items-center">
           <div className="flex-shrink-0 mb-4 sm:mb-0 ml-4">
             <ProgressCircle progress={60} />
           </div>
