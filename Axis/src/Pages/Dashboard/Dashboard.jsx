@@ -1,10 +1,11 @@
 import React from 'react'
+import HeaderDashboard from './HeaderDashboard'
 
 
 const Dashboard = () => {
   return (
     <div >
-     Dashboard
+    <HeaderDashboard/>
     </div>
   )
 }

@@ -3,7 +3,7 @@ import Header from '../Common/Dashboard/Header'
 import Sidebar from '../Common/Dashboard/Sidebar'
 import Footer from '../Common/Dashboard/Footer'
 import { Outlet } from 'react-router-dom';
-import Content from '../Common/Dashboard/Content';
+
 export const DashboardLayout = () => {
   return (
     <div >
