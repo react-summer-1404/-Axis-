@@ -1,5 +1,5 @@
 import React from 'react'
-import HeaderDashboard from './HeaderDashboard'
+import HeaderDashboard from './MainDashboard'
 
 
 const Dashboard = () => {

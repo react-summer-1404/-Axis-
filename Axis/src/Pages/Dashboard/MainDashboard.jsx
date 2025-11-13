@@ -1,6 +1,6 @@
 
 import React from 'react';
-import {  ChevronLeft, User, Calendar, Bell } from 'lucide-react';
+import {  Bell } from 'lucide-react';
 import ThemeToggle from '../../Common/Button/ThemeToggle';
 import Home from '../../assets/Courses/iconCourses/Frame (1).svg'
 import { StatCard } from './StatCard';
@@ -52,11 +52,11 @@ const ProgressCircle = ({ progress }) => {
 
 <StatCard/>
 
-const HeaderDashboard = () => {
+const MainDashboard = () => {
 
   return (
 
-    <div className="p-6 md:p-10 bg-gray-50 font-sans min-h-screen rtl text-right">
+    <div className="p-6 md:p-10 bg-gray-50 font-sans min-h-screen rtl text-right rounded-full">
       <div className="flex justify-end items-center mb-10">
         <div className="flex space-x-3 rtl:space-x-reverse gap-5">
         <button className='size-6'>  <ThemeToggle/> </button>
@@ -72,7 +72,7 @@ const HeaderDashboard = () => {
             <ProgressCircle progress={60} />
           </div>
           <div className="p-4 mr-4 text-sm text-gray-500">
-            برای شرکت در دوره‌ها باید حداقل **۸۰٪** از پروفایل خود را تکمیل کنید.
+            برای شرکت در دوره‌ها باید حداقل 80% از پروفایل خود را تکمیل کنید.
           </div>
         </div>
 
@@ -131,4 +131,4 @@ const HeaderDashboard = () => {
   );
 };
 
-export default HeaderDashboard;
+export default MainDashboard;
