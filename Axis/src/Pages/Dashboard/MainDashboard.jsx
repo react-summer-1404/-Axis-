@@ -6,6 +6,7 @@ import Home from '../../assets/Courses/iconCourses/Frame (1).svg'
 import { StatCard } from './StatCard';
 import shoppingCartIcon from '../../assets/Courses/DashboardIcon/Group 87.svg'
 import graduationCapIcon from '../../assets/Courses/DashboardIcon/Group 86.svg'
+import MainCard from './MainCard';
 
 
 
@@ -128,6 +129,7 @@ const MainDashboard = () => {
         </div>
       </div>
       
+    <MainCard/>
       
     </div>
   );
