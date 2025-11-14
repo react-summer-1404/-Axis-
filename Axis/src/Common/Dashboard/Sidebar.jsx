@@ -1,8 +1,9 @@
-import React from 'react'
-import Exits from '../../assets/Courses/iconCourses/Frame.svg'
-import Sing from '../../assets/Courses/iconCourses/ax-kartoni-bamazeh-11 (1).svg'
-import ThemeToggle from '../Button/ThemeToggle'
-import Home from '../../assets/Courses/iconCourses/Frame (1).svg'
+import React from 'react';
+import Exits from '../../assets/Courses/iconCourses/Frame.svg';
+import Sing from '../../assets/Courses/iconCourses/ax-kartoni-bamazeh-11 (1).svg';
+import ThemeToggle from '../Button/ThemeToggle';
+import Home from '../../assets/Courses/iconCourses/Frame (1).svg';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   return (
@@ -25,8 +26,8 @@ const Sidebar = () => {
 
             <div className="space-y-4">
               {[
-                "داشبورد",
-                "اطلاعات کاربری",
+               "داشبورد",
+                "اطلاعات کاربری" ,
                 "دوره‌های من",
                 "دوره‌های رزرو شده",
                 "دیدگاه‌های من",

@@ -11,8 +11,10 @@ import Login from './Pages/Auth/Login.jsx'
 import Register from './Pages/Auth/Register.jsx'
 import VerifyCode from './Pages/Auth/VerifyCode.jsx';
 import ForgotPassword from './Pages/Auth/ForgetPassword.jsx';
+
 import { DashboardLayout } from './Layout/DashboardLayout.jsx';
 import Dashboard from './Pages/Dashboard/Dashboard.jsx';
+import UseInformation from './Pages/UseInformation/UseInformation.jsx';
 
 
 
@@ -37,11 +39,13 @@ const router = createBrowserRouter([
   { path: "/register", element: <Register /> },
   { path: "/verify-code", element: <VerifyCode /> },
   { path:"/forgot-password" ,element:<ForgotPassword />},
+
    {
     path: '/Dashboard',
     element: <DashboardLayout/>,
     children:[
-      {index:true , element: <Dashboard/>}
+    {index:true , element: <Dashboard/>},
+    {path: '/Dashboard/UserInformation' , element: <UseInformation/>},
          
     ]
    
