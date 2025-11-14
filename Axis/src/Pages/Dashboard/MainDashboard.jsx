@@ -97,11 +97,11 @@ const MainDashboard = () => {
       </div>
       
  
-      <div className="mt-8 p-6 bg-purple-100/70 rounded-3xl relative shadow-lg">
+      <div className="mt-10 p-6 bg-[#C8C1ED66] rounded-3xl relative shadow-lg">
 
-        <div className="absolute top-0 right-0 p-4 transform -translate-x-6 -translate-y-6">
+        <div className="absolute bottom-48 left-0 p-4 transform translate-x-4">
           <div className="p-3 bg-[#5751E1] rounded-full text-white shadow-xl">
-            <Bell size={24} fill="white" />
+            <Bell size={26} fill="white" />
           </div>
         </div>
         
