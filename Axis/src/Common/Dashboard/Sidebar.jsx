@@ -1,15 +1,13 @@
 import React from 'react';
 import Exits from '../../assets/Courses/iconCourses/Frame.svg';
 import Sing from '../../assets/Courses/iconCourses/ax-kartoni-bamazeh-11 (1).svg';
-import ThemeToggle from '../Button/ThemeToggle';
-import Home from '../../assets/Courses/iconCourses/Frame (1).svg';
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   return (
   <div className="min-h-screen " >
-      <div className="">
-        <div className="">
+      <div >
+        <div>
        
           <aside className="w-80  bg-[#5751E1] text-white rounded-r-2xl p-6 space-y-24" >
             <div className="text-center">
@@ -26,8 +24,8 @@ const Sidebar = () => {
 
             <div className="space-y-4">
               {[
-               "داشبورد",
-                "اطلاعات کاربری" ,
+           <Link to='/Dashboard'>    "داشبورد" </Link> ,
+           <Link to='/Dashboard/UserInformation'>   "اطلاعات کاربری"  </Link>  ,
                 "دوره‌های من",
                 "دوره‌های رزرو شده",
                 "دیدگاه‌های من",
