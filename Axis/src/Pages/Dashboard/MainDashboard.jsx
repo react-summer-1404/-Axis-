@@ -108,20 +108,22 @@ const MainDashboard = () => {
         <h3 className="text-xl font-bold text-gray-800 mb-6 mt-4">جدیدترین اخبار و مقالات</h3>
         
       
-        <div className="space-y-4 text-gray-700">
-          <div className="text-sm">
+        <div className="space-y-4 text-gray-700 " dir='ltr'>
+          <div className="text-sm flex justify-between">
             <span className="text-gray-500 ml-4">۱۴۰۴ / ۱۱ / ۳۰</span>
-            دوره آموزش جامع از پایه تا پیشرفته Next.js منتشر شد. <span className="text-red-600 font-bold">جدید</span>
+          <p>   دوره آموزش جامع از پایه تا پیشرفته منتشر شدNext.js 
+            <span className="text-red-600 font-bold float-left">جدید</span>
+           </p>
+          </div>
+          
+          <div className="text-sm flex justify-between">
+            <span className="text-gray-500 ml-4  ">۱۴۰۴ / ۱۱ / ۲۵</span>
+            تخفیف ویژه دوره ری‌اکت را از دست ندهید
           </div>
           <hr className="border-t border-dashed border-gray-400" />
-          <div className="text-sm">
-            <span className="text-gray-500 ml-4">۱۴۰۴ / ۱۱ / ۲۵</span>
-            تخفیف ویژه دوره ری‌اکت را از دست ندهید.
-          </div>
-          <hr className="border-t border-dashed border-gray-400" />
-          <div className="text-sm">
+          <div className="text-sm flex justify-between">
             <span className="text-gray-500 ml-4">۱۴۰۴ / ۱۱ / ۲۳</span>
-            دوره آموزش tailwind روز به روز شد.
+              به روز شدtailwind دوره آموزش
           </div>
         </div>
       </div>
