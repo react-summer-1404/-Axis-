@@ -4,23 +4,24 @@ import SectionHeader from '../../Pages/Dashboard/SectionHeader';
 
 const initialSuggestedCourses = [
 
-  { id: 1, title: "آموزش کامل کار با Figma", imageSrc: "/src/assets/figma.png", isSuggested: true },
-  { id: 2, title: "آموزش Java Script", imageSrc: "/src/assets/js.png", isSuggested: true },
+  { id: 1, title: "آموزش Tailwind css", imageSrc: "../../../src/assets/Courses/DashboardIcon/Rectangle 111.svg" ,instructor:'مهدی اصغری' },
+  { id: 2, title: "آموزش کامل کار با Figma", imageSrc: "../../../src/assets/Courses/DashboardIcon/Rectangle 115.svg", isSuggested: true },
 ];
 
 const initialRunningCourses = [
   { 
     id: 3, 
-    title: "Tailwind css آموزش", 
-    imageSrc: "/src/assets/tailwind.png", 
-    instructor: "مهدی اصغری",
+    title: 'آموزش کار با API' ,
+    imageSrc: "../../../src/assets/Courses/DashboardIcon/Rectangle 113.svg", 
+     instructor: "محسن اسفندیاری",
     badgeText: "۴۰٪ تخفیف"
   },
   { 
     id: 4, 
-    title: "آموزش کار با API", 
-    imageSrc: "/src/assets/api.png", 
-    instructor: "محسن اسفندیاری"
+    title: "آموزش Java Script", 
+    imageSrc: "../../../src/assets/Courses/DashboardIcon/Rectangle 117.svg",
+     isSuggested: true ,
+   
   },
 ];
 
