@@ -1,17 +1,17 @@
 import React from 'react';
 
-const DashboardCard = ({ title, instructor, imageSrc, isSuggested, badgeText }) => {
+const DashboardCard = ({ title, instructor, imageSrc, isSuggested, DateText }) => {
   return (
 
     <div className="flex flex-row-reverse items-center p-4 bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
       
 
-      <div className="w-16 h-16 ml-4 flex-shrink-0">
+      <div className="w-24 h-16 ml-1 flex-shrink-0">
       
         <img 
           src={imageSrc} 
           alt={title} 
-          className="w-full h-full object-cover rounded-md" 
+          className="w-full h-full  rounded-md" 
         />
       </div>
 
@@ -21,18 +21,18 @@ const DashboardCard = ({ title, instructor, imageSrc, isSuggested, badgeText }) 
         
    
         {isSuggested ? (
-          <a href="#" className="text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
+          <a href="#" className="text-lg  text-[#5751E1] hover:text-blue-700 transition-colors">
             مشاهده دوره <span aria-hidden="true">&larr;</span> 
           </a>
         ) : (
-          <p className="text-sm text-gray-500">{instructor}</p>
+          <p className="text-lg text-[#5751E1]">{instructor}</p>
         )}
       </div>
 
 
-      {badgeText && (
-        <span className="absolute top-0 right-0 transform translate-y-[-50%] bg-[#FFB600] text-gray-900 text-xs font-semibold px-2 py-0.5 rounded-full shadow-md whitespace-nowrap">
-          {badgeText}
+      {DateText && (
+        <span className="absolute bottom-0 left-32 py-6 text-[#FFB800] text-xs font-semibold  whitespace-nowrap">
+          {DateText}
         </span>
       )}
     </div>

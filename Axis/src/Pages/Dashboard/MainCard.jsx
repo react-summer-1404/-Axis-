@@ -4,7 +4,7 @@ import SectionHeader from '../../Pages/Dashboard/SectionHeader';
 
 const initialSuggestedCourses = [
 
-  { id: 1, title: "آموزش Tailwind css", imageSrc: "../../../src/assets/Courses/DashboardIcon/Rectangle 111.svg" ,instructor:'مهدی اصغری' },
+  { id: 1, title: "آموزش Tailwind css", imageSrc: "../../../src/assets/Courses/DashboardIcon/Rectangle 111.svg" ,instructor:'مهدی اصغری',  DateText: "چهارشنبه ها . ۱۷:۳۰" },
   { id: 2, title: "آموزش کامل کار با Figma", imageSrc: "../../../src/assets/Courses/DashboardIcon/Rectangle 115.svg", isSuggested: true },
 ];
 
@@ -14,13 +14,13 @@ const initialRunningCourses = [
     title: 'آموزش کار با API' ,
     imageSrc: "../../../src/assets/Courses/DashboardIcon/Rectangle 113.svg", 
      instructor: "محسن اسفندیاری",
-    badgeText: "۴۰٪ تخفیف"
+   
   },
   { 
     id: 4, 
     title: "آموزش Java Script", 
     imageSrc: "../../../src/assets/Courses/DashboardIcon/Rectangle 117.svg",
-     isSuggested: true ,
+    isSuggested: true ,
    
   },
 ];
@@ -37,14 +37,17 @@ const MainCard = () => {
 
       <SectionHeader />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
         {suggestedCourses.map(course => (
-          <DashboardCard 
-            key={course.id} 
+           <div key={course.id} className="relative" >    
+            <DashboardCard 
             title={course.title} 
             imageSrc={course.imageSrc} 
             isSuggested={course.isSuggested}
+            DateText={course.DateText}
+            instructor={course.instructor}
           />
+          </div>
         ))}
       </div>
 
@@ -57,8 +60,7 @@ const MainCard = () => {
               title={course.title} 
               imageSrc={course.imageSrc} 
               instructor={course.instructor}
-              badgeText={course.badgeText}
-              isSuggested={false} 
+              isSuggested={course.isSuggested} 
             />
           </div>
         ))}
