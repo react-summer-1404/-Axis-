@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Edit } from 'lucide-react'; 
 import ThemeToggle from '../../Common/Button/ThemeToggle';
 import Home from '../../assets/Courses/iconCourses/Frame (1).svg'
+import {Link} from 'react-router-dom'
 
 const MainInformation = () => {
   const [isEditing, setIsEditing] = useState(true); 
@@ -129,7 +130,7 @@ const MainInformation = () => {
                             font-bold py-2 px-7 rounded-full shadow-lg 
                             transition transform hover:scale-105">
             <Edit className="w-5 h-5" />
-            <span>{isEditing ? 'ذخیره' : 'ویرایش'}</span>
+        <Link to='/Dashboard/EditingInformation'>  <span>{isEditing ? 'ذخیره' : 'ویرایش'}</span></Link>   
           </button>
         </div>
 

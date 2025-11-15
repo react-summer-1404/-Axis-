@@ -1,8 +1,11 @@
 import React from 'react'
+import Edite from './Edite'
 
 const EditingInformation = () => {
   return (
-    <div>EditingInformation</div>
+    <div>
+        <Edite/>
+    </div>
   )
 }
 
