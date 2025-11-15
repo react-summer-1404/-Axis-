@@ -15,7 +15,7 @@ export const DashboardLayout = () => {
         <aside  >
           <Sidebar/>
         </aside>
-        <main >
+        <main className="flex-1 p-6 overflow-y-auto bg-gray-50 rounded-2xl" >
           <Outlet /> 
          
         </main>
