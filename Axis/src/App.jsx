@@ -15,6 +15,7 @@ import ForgotPassword from './Pages/Auth/ForgetPassword.jsx';
 import { DashboardLayout } from './Layout/DashboardLayout.jsx';
 import Dashboard from './Pages/Dashboard/Dashboard.jsx';
 import UserInformation from './Pages/UserInformation/UserInformation.jsx';
+import EditingInformation from './Pages/EditingInformation/EditingInformation.jsx';
 
 
 
@@ -46,6 +47,7 @@ const router = createBrowserRouter([
     children:[
     {index:true , element: <Dashboard/>},
     {path: '/Dashboard/UserInformation' , element: <UserInformation/>},
+    {path: '/Dashboard/editingInformation' , element: <EditingInformation/>}
          
     ]
    
