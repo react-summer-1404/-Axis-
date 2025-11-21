@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { initialCourses } from '../../api/Dashboard/courses.js';
 import SelectedCoursesList from './SelectedCoursesList.jsx';
+import Search from '../../assets/Courses/DashboardIcon/Button.svg'
 
 const COURSES_PER_PAGE = 5; 
 
@@ -59,7 +60,7 @@ export default function CoursesList() {
 
 
   return (
-    <div className={`min-h-screen p-4 md:p-10 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-100'}`} style={{ direction: 'rtl' }}>
+    <div className={`min-h-screen p-4 md:p-10 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-100'}`} style={{ direction: 'ltr' }}>
       
   
       <div className={`shadow-xl rounded-xl p-4 md:p-8 w-full max-w-7xl mx-auto ${containerClass}`}>
@@ -106,13 +107,15 @@ export default function CoursesList() {
                 setSearchTerm(e.target.value);
                 setCurrentPage(1);
               }}
+              
               className={`w-full py-3 pr-4 pl-12 rounded-full text-right shadow-md transition duration-150 ease-in-out ${searchBgClass}`}
             />
+           
             <button
-              className={`absolute left-3 top-1/2 transform -translate-y-1/2 p-2 rounded-full ${isDarkMode ? 'bg-indigo-700 hover:bg-indigo-600' : 'bg-indigo-600 hover:bg-indigo-700'}`}
+              className={`absolute left-0 top-1/2 -translate-y-1/2 `}
             >
               <span className={`text-xl ${searchIconClass}`}>
-                <span className="text-white">🔍</span>
+                <img src={Search}/>
               </span>
             </button>
           </div>
