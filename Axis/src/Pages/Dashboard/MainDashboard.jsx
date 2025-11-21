@@ -8,12 +8,15 @@ import shoppingCartIcon from '../../assets/Courses/DashboardIcon/Group 87.svg'
 import graduationCapIcon from '../../assets/Courses/DashboardIcon/Group 86.svg'
 import MainCard from './MainCard';
 
+import { useDashboardProfile } from '../../api/Dashboard/Dashboard.js'; 
+
 
 
 const ProgressCircle = ({ progress }) => {
   const radius = 50;
   const circumference = 2 * Math.PI * radius;
   const offset = circumference - (progress / 100) * circumference;
+
 
   return (
    
@@ -55,6 +58,21 @@ const ProgressCircle = ({ progress }) => {
 
 const MainDashboard = () => {
 
+  const { data, loading, error } = useDashboardProfile(); 
+
+
+    if (loading) {
+        return <div className="p-10 text-center text-indigo-600">در حال بارگذاری اطلاعات داشبورد...</div>;
+    }
+
+    if (error) {
+        return <div className="p-10 text-center bg-red-100 text-red-700">خطا: {error}</div>;
+    }
+    
+    const profileProgress = data.profileCompletionPercentage || 0;
+
+
+
   return (
 
     <div className="p-6 md:p-10  font-sans min-h-screen rtl text-right rounded-full">
@@ -70,7 +88,7 @@ const MainDashboard = () => {
         
         <div className="flex flex-col sm:flex-row items-center">
           <div className="flex-shrink-0 mb-4 sm:mb-0 ml-4">
-            <ProgressCircle progress={60} />
+            <ProgressCircle progress={profileProgress} />
           </div>
           <div className="p-4 mr-4 text-sm text-gray-500">
             برای شرکت در دوره‌ها باید حداقل 80% از پروفایل خود را تکمیل کنید.
