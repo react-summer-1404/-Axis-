@@ -1,6 +1,3 @@
-// src/pages/Courses.jsx
-// src/pages/CoursesPage.jsx
-// import React from 'react'
 import React, { useState } from "react";
 import RatingSection from "./RatingSection";
 import PriceFilter from "./PriceFilter";
@@ -14,14 +11,13 @@ const About = () => {
   return (
     <div>
           <aside className="w-full md:w-72 flex flex-col gap-4 pr-7 ">
-          {/* دسته‌بندی‌ها */}
+     
           <div className="bg-[#F7F7F9] rounded-2xl shadow p-4 dark:bg-[#cbcbed] ">
             <h2 className="text-base font-bold mb-3">دسته‌بندی‌ها</h2>
             <ul className="space-y-2 text-gray-700 text-sm">
              <TechnologyList/>
             </ul>
 
-            {/* نمایش بیشتر / کمتر */}
             <button
               className="text-blue-600 text-sm mt-3"
               onClick={() => setShowMore((prev) => !prev)}
@@ -30,8 +26,6 @@ const About = () => {
             </button>
           </div>
 
-            {/* نحوه برگزاری */}
-
             <div className="bg-[#F7F7F9] rounded-2xl shadow p-4 dark:bg-[#cbcbed]">
             <h2 className="text-base font-bold mb-3">نحوه برگزاری</h2>
             <ul className="space-y-2 text-gray-700 text-sm">
@@ -39,7 +33,6 @@ const About = () => {
             </ul>
           </div>
 
-          {/* سطح مهارت */}
           <div className="bg-[#F7F7F9] rounded-2xl shadow p-4 dark:bg-[#cbcbed]">
             <h2 className="text-base font-bold mb-3"> سطح مهارت</h2>
             <ul className="space-y-2 text-gray-700 text-sm">
@@ -47,7 +40,6 @@ const About = () => {
             </ul>
           </div>
 
-              {/* مربیان */}
               <div className="bg-[#F7F7F9] rounded-2xl shadow p-4 dark:bg-[#cbcbed]">
             <h2 className="text-base font-bold mb-3"> مربیان </h2>
             <ul className="space-y-2 text-gray-700 text-sm">
