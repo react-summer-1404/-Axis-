@@ -2,6 +2,8 @@ import React, { useState, useMemo } from 'react';
 import { initialCourses } from '../../api/Dashboard/courses.js';
 import SelectedCoursesList from './SelectedCoursesList.jsx';
 import Search from '../../assets/Courses/DashboardIcon/Button.svg'
+import ThemeToggle from '../../Common/Button/ThemeToggle.jsx';
+import Home from '../../assets/Courses/DashboardIcon/Home - Copy.svg'
 
 const COURSES_PER_PAGE = 5; 
 
@@ -60,23 +62,19 @@ export default function CoursesList() {
 
 
   return (
-    <div className={`min-h-screen p-4 md:p-10 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-100'}`} style={{ direction: 'ltr' }}>
+    <div className={`min-h-screen p-4 md:p-10  dark:bg-gray-900 `} style={{ direction: 'ltr' }}>
       
   
       <div className={`shadow-xl rounded-xl p-4 md:p-8 w-full max-w-7xl mx-auto ${containerClass}`}>
         
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-6">
           
-          <div className="flex items-center space-x-2 space-x-reverse">
+          <div className="flex flex-col gap-2 space-x-2 space-x-reverse">
             
-            <button 
-              onClick={toggleTheme}
-              className={`p-2 rounded-full transition-colors duration-200 ${
-                isDarkMode ? 'bg-gray-700 text-yellow-300' : 'bg-yellow-100 text-yellow-600'
-              }`}
-            >
-              <span className="text-xl">
-                {isDarkMode ? '🌙' : '☀️'}
+            <button className='relative'  >
+              <span >
+               <ThemeToggle/>
+               <img src={Home} className='absolute top-1'/>
               </span>
             </button>
   
@@ -84,7 +82,7 @@ export default function CoursesList() {
               isDarkMode ? 'border-gray-700' : 'border-gray-300'
             }`}>
               <span className={`ml-2 text-xl ${isDarkMode ? 'text-indigo-400' : 'text-indigo-600'}`}>
-                {sortBy === 'newest' ? '⌄' : '≡'} 
+              
               </span>
               <select 
                 value={sortBy} 
