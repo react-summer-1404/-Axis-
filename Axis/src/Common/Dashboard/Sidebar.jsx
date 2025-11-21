@@ -18,7 +18,7 @@ const Sidebar = () => {
                   className="w-full h-full object-cover "
                 />
               </div>
-              <h3 className="pt-9 text-lg ">فلان فلانی خوش آمدید</h3>
+              <h3 className="pt-9 text-lg " id="welcome-message">فلان فلانی خوش آمدید</h3>
               <div className="mt-5 w-[267px] h-1 mx-auto rounded-full bg-gradient-to-r from-[#5751E1] via-[#FFC224] to-[#5751E1]"></div>
             </div>
 
@@ -26,11 +26,11 @@ const Sidebar = () => {
               {[
            <Link to='/Dashboard'>    "داشبورد" </Link> ,
            <Link to='/Dashboard/UserInformation'>   "اطلاعات کاربری"  </Link>  ,
-                "دوره‌های من",
-                "دوره‌های رزرو شده",
-                "دیدگاه‌های من",
-                "علاقه‌مندی‌ها",
-                "تنظیمات امنیتی"
+           <Link to='/Dashboard/CoursesList'>     "دوره‌های من"  </Link>,
+           <Link to='/Dashboard/StatusDashboard'>     "دوره‌های رزرو شده" </Link> ,
+            <Link to='/Dashboard/MyCommentsManager'>   "دیدگاه‌های من" </Link>,
+            <Link to='/Dashboard/Favorite'>    "علاقه‌مندی‌ها" </Link> ,
+            <Link to='/Dashboard/Setting'>    "تنظیمات امنیتی" </Link> ,
               ].map((item) => (
                 <button
                   key={item}
