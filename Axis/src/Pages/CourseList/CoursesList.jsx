@@ -145,14 +145,14 @@ export default function CoursesList() {
               </tr>
             </thead>
             
-            <tbody className={`divide-y ${isDarkMode ? 'divide-gray-700' : 'divide-gray-200'}`}>
+            <tbody className={`divide-y-8 divide-gray-100  bg-[#C8C1ED4D]`}>
               {currentCourses.length > 0 ? (
                 currentCourses.map((course) => (
                   <tr key={course.id} className={rowHoverClass}>
                     
        
                     <td className="px-6 py-3 whitespace-nowrap text-sm text-center">
-                      <button className="text-indigo-600 hover:text-indigo-900 transition-colors">
+                      <button >
                        <img src={Eyes}/>
                       </button>
                     </td>
