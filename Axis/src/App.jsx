@@ -16,6 +16,11 @@ import { DashboardLayout } from './Layout/DashboardLayout.jsx';
 import Dashboard from './Pages/Dashboard/Dashboard.jsx';
 import UserInformation from './Pages/UserInformation/UserInformation.jsx';
 import EditingInformation from './Pages/EditingInformation/EditingInformation.jsx';
+import CoursesList from './Pages/CourseList/CoursesList.jsx';
+import StatusDashboard from './Pages/StatusDashboard/StatusDashboard.jsx';
+import MyCommentsManager from './Pages/MyCommentsManager/MyCommentsManager.jsx';
+import Favorite from './Pages/favorite/favorite.jsx';
+import Setting from './Pages/Setting/Setting.jsx';
 
 
 
@@ -47,7 +52,12 @@ const router = createBrowserRouter([
     children:[
     {index:true , element: <Dashboard/>},
     {path: '/Dashboard/UserInformation' , element: <UserInformation/>},
-    {path: '/Dashboard/EditingInformation' , element: <EditingInformation/>}
+    {path: '/Dashboard/EditingInformation' , element: <EditingInformation/>},
+    {path:'/Dashboard/CoursesList' , element: <CoursesList/>},
+    {path:'/Dashboard/StatusDashboard', element:<StatusDashboard/>},
+    {path: '/Dashboard/MyCommentsManager', element: <MyCommentsManager/>},
+    {path:'/Dashboard/Favorite' , element: <Favorite/>},
+    {path:'/Dashboard/Setting' , element: <Setting/>}
          
     ]
    
