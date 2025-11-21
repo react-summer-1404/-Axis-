@@ -3,7 +3,8 @@ import { initialCourses } from '../../api/Dashboard/courses.js';
 import SelectedCoursesList from './SelectedCoursesList.jsx';
 import Search from '../../assets/Courses/DashboardIcon/Button.svg'
 import ThemeToggle from '../../Common/Button/ThemeToggle.jsx';
-import Home from '../../assets/Courses/DashboardIcon/Home - Copy.svg'
+import Home from '../../assets/Courses/DashboardIcon/Home - Copy.svg';
+import Eyes from '../../assets/Courses/DashboardIcon/Group 128.svg'
 
 const COURSES_PER_PAGE = 5; 
 
@@ -121,25 +122,26 @@ export default function CoursesList() {
         </div>
 
         <div className="overflow-x-auto rounded-lg">
-          <table className="min-w-full divide-y divide-gray-200">
+          <table className="min-w-full  divide-gray-100">
       
             <thead className={`${headerBgClass}`}>
               <tr>
-                <th scope="col" className="px-6 py-3 text-right text-xs font-bold uppercase tracking-wider w-1/12">
+                <th scope="col" className="px-6 py-3 text-right text-lg font-bold ">
                   مشاهده
                 </th>
-                <th scope="col" className="px-6 py-3 text-right text-xs font-bold uppercase tracking-wider w-2/12">
+                <th scope="col" className="px-6 py-3 text-right text-lg font-bold ">
                   قیمت (تومان)
                 </th>
-                <th scope="col" className="px-6 py-3 text-right text-xs font-bold uppercase tracking-wider w-2/12">
+                <th scope="col" className="px-6 py-3 text-right text-lg font-bold ">
                   تاریخ شروع
                 </th>
-                <th scope="col" className="px-6 py-3 text-right text-xs font-bold uppercase tracking-wider w-3/12">
+                <th scope="col" className="px-6 py-3 text-right text-lg font-bold ">
                   مدرس دوره
                 </th>
-                <th scope="col" className="px-6 py-3 text-right text-xs font-bold uppercase tracking-wider w-4/12">
+                <th scope="col" className="px-6 py-3 text-right text-lg font-bold ">
                   نام دوره
                 </th>
+                
               </tr>
             </thead>
             
@@ -151,7 +153,7 @@ export default function CoursesList() {
        
                     <td className="px-6 py-3 whitespace-nowrap text-sm text-center">
                       <button className="text-indigo-600 hover:text-indigo-900 transition-colors">
-                        👁️
+                       <img src={Eyes}/>
                       </button>
                     </td>
                     
