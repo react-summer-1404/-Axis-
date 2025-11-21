@@ -48,7 +48,7 @@ const AvatarButton = () => {
           />
           
           <div className="absolute inset-0 rounded-full bg-black bg-opacity-10 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-            <span className="text-3xl text-white">📷</span>
+            <span className="text-3xl text-white"></span>
           </div>
         </div>
 

@@ -1,13 +1,14 @@
 import React, { useState, useCallback, useMemo } from 'react';
-import { Home, Sun, Moon, Eye, EyeOff, ChevronDown, ChevronUp, Mail, Save } from 'lucide-react';
+import { Home, Sun, Moon, Eye, EyeOff, ChevronDown, ChevronUp, Mail, Save, AlertTriangle, CheckCircle, Loader } from 'lucide-react';
+import axios from 'axios'; 
+const API_URL = 'https://sepehracademy.liara.run/SharePanel/ChangePassword';
 
+const HARDCODED_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50cyI6W3sicGhvbmUiOiIwOTA1IDk2NyAzODA5IiwiaWQiOjczLCJpc1VzZSI6dHJ1ZX1dLCJpYXQiOjE3NjM3MzczNDgsImV4cCI6MTc2Mzc3MzM0OH0.-JwrowDMvOUtVBRjv-xY2jw6DMzA9ake6QVjAcnDLuo";
 
 const PasswordInputField = ({ label, value, onChange, placeholder, isError = false, type = 'password' }) => {
     const [showPassword, setShowPassword] = useState(false);
 
-  
     const inputType = type === 'password' ? (showPassword ? 'text' : 'password') : type;
-    
     const hasEyeIcon = type === 'password';
 
     return (
@@ -26,7 +27,7 @@ const PasswordInputField = ({ label, value, onChange, placeholder, isError = fal
                 <button
                     type="button"
                     onClick={() => setShowPassword(prev => !prev)}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-purple-600 transition"
+                    className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-purple-600 transition" // ⬅️ تغییر از right به left برای RTL
                     title={showPassword ? 'پنهان کردن رمز' : 'نمایش رمز'}
                 >
                     {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
@@ -40,61 +41,106 @@ const PasswordInputField = ({ label, value, onChange, placeholder, isError = fal
     );
 };
 
-
-
 const Setting = () => {
-
     const [darkMode, setDarkMode] = useState(false);
-
-
+    
     const [isPasswordExpanded, setIsPasswordExpanded] = useState(true);
     const [is2FAExpanded, setIs2FAExpanded] = useState(true);
     const [isEmailExpanded, setIsEmailExpanded] = useState(true);
-
     const [passwordFields, setPasswordFields] = useState({
         current: '', 
         new: '', 
         confirm: '',
     });
+    const [recoveryEmail, setRecoveryEmail] = useState('example@gmail.com');
+    const [is2FAEnabled, setIs2FAEnabled] = useState(false);
+
+    const [passwordStatus, setPasswordStatus] = useState({ 
+        loading: false, 
+        message: null, 
+        isSuccess: null 
+    });
+
 
     const handlePasswordChange = useCallback((field) => (e) => {
         setPasswordFields(prev => ({ ...prev, [field]: e.target.value }));
+        setPasswordStatus({ loading: false, message: null, isSuccess: null }); // پاک کردن پیام هنگام شروع تایپ
     }, []);
-
- 
-    const [is2FAEnabled, setIs2FAEnabled] = useState(false);
-
-  
-    const [recoveryEmail, setRecoveryEmail] = useState('example@gmail.com');
 
     const isReadyToSavePassword = useMemo(() => {
         const { current, new: newPass, confirm } = passwordFields;
-       
-        return current.length > 0 && newPass.length > 0 && confirm.length > 0;
+        const passwordsMatch = newPass === confirm && newPass.length >= 6; 
+        
+        return current.length > 0 && newPass.length > 0 && confirm.length > 0 && passwordsMatch;
     }, [passwordFields]);
 
-    const handlePasswordSave = () => {
-        if (isReadyToSavePassword) {
-           
-            console.log('ذخیره رمز عبور');
-            alert('تغییرات رمز عبور با موفقیت ذخیره شد.');
-        } else {
-           
-             alert('لطفاً هر سه فیلد رمز عبور را پر کنید.');
+    const handlePasswordSave = useCallback(async () => {
+        if (!isReadyToSavePassword) {
+            setPasswordStatus({ loading: false, message: 'لطفاً رمز عبور جدید و تکرار آن را یکسان و حداقل ۶ کاراکتر وارد کنید.', isSuccess: false });
+            return;
         }
-    };
+
+        setPasswordStatus({ loading: true, message: 'درحال ذخیره‌سازی رمز عبور...', isSuccess: null });
+
+        try {
+            const response = await axios.post(
+                API_URL,
+                { 
+                    oldPassword: passwordFields.current,
+                    newPassword: passwordFields.new
+                },
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${HARDCODED_TOKEN}`, 
+                    },
+                }
+            );
+
+            if (response.status === 200 && response.data.isSuccess) {
+                setPasswordStatus({ 
+                    loading: false, 
+                    message: '✅ رمز عبور شما با موفقیت تغییر کرد.', 
+                    isSuccess: true 
+                });
+
+                setPasswordFields({ current: '', new: '', confirm: '' });
+            } else {
+
+                const serverMessage = response.data.message || 'خطایی نامشخص در سمت سرور رخ داد.';
+                setPasswordStatus({ 
+                    loading: false, 
+                    message: ` خطا: ${serverMessage}`, 
+                    isSuccess: false 
+                });
+            }
+        } catch (error) {
+ 
+            const status = error.response?.status;
+            let errorMessage = 'اتصال با سرور برقرار نشد (بررسی اتصال یا CORS).';
+
+            if (status === 401) {
+                errorMessage = ' خطا: توکن احراز هویت منقضی یا نامعتبر است.';
+            } else if (status === 400) {
+                 errorMessage = error.response.data.message || ' خطا: اطلاعات وارد شده نامعتبر است.';
+            }
+            
+            setPasswordStatus({ 
+                loading: false, 
+                message: errorMessage, 
+                isSuccess: false 
+            });
+        }
+    }, [passwordFields, isReadyToSavePassword]);
     
     const handleEmailSave = () => {
-      
-        console.log('ذخیره ایمیل بازیابی');
-        alert('ایمیل بازیابی ذخیره شد.');
+        alert('ایمیل بازیابی ذخیره شد. (نیاز به اتصال API دارد)');
     };
     
-
- 
 
     return (
         <div className={`min-h-screen font-[Inter] rtl ${darkMode ? 'dark bg-gray-900' : 'bg-gray-100'}`}>
+        
         
             <div className="flex justify-start items-center bg-white dark:bg-gray-800 p-3 border-b border-gray-200 dark:border-gray-700 shadow-sm">
                 <Home className="w-6 h-6 ml-4 text-purple-600 cursor-pointer" title="خانه" />
@@ -108,87 +154,102 @@ const Setting = () => {
 
             <div className="w-full max-w-4xl mx-auto p-4 sm:p-8 pt-10">
                 
-       
                 <div className="flex items-center justify-end mb-12">
                     <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white">
                         تنظیمات امنیتی
                     </h1>
                 </div>
 
-           
-                <div className="mb-8">
+         
+                <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
                     <header 
                         className="flex justify-between items-center cursor-pointer pb-2" 
                         onClick={() => setIsPasswordExpanded(prev => !prev)}
                     >
-                        <h2 className="text-lg font-bold text-gray-900 dark:text-white rtl">
+                        <h2 className="text-xl font-extrabold text-gray-900 dark:text-white rtl">
                             تغییر رمز عبور
                         </h2>
                         {isPasswordExpanded ? (
-                            <ChevronUp className="w-6 h-6 text-gray-500 dark:text-gray-400" />
+                            <ChevronUp className="w-6 h-6 text-purple-600" />
                         ) : (
-                            <ChevronDown className="w-6 h-6 text-gray-500 dark:text-gray-400" />
+                            <ChevronDown className="w-6 h-6 text-purple-600" />
                         )}
                     </header>
-                    <div className="border-b-2 border-purple-200 dark:border-purple-700 mb-6 w-full"></div> {/* خط افقی شبیه به تصویر */}
+                    <div className="border-b-2 border-purple-200 dark:border-purple-700 mb-6 w-full"></div> 
 
                     <div className={`overflow-hidden transition-all duration-500 ${isPasswordExpanded ? 'max-h-[500px]' : 'max-h-0'}`}>
-                      
+                        
+            
+                        {passwordStatus.message && (
+                            <div className={`flex items-center p-3 mb-6 rounded-lg ${passwordStatus.isSuccess === true ? 'bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300' : 'bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300'}`}>
+                                {passwordStatus.isSuccess === true ? <CheckCircle className="w-5 h-5 ml-2" /> : <AlertTriangle className="w-5 h-5 ml-2" />}
+                                <p className="text-sm font-medium">{passwordStatus.message}</p>
+                            </div>
+                        )}
+                    
                         <div className="flex flex-col md:flex-row gap-6 justify-between items-center">
                             <PasswordInputField
                                 label="رمز عبور فعلی"
                                 placeholder="رمز عبور فعلی"
                                 value={passwordFields.current}
                                 onChange={handlePasswordChange('current')}
-                                type="password"
+                                isError={passwordStatus.isSuccess === false}
                             />
                             <PasswordInputField
                                 label="رمز عبور جدید"
-                                placeholder="رمز عبور جدید"
+                                placeholder="حداقل ۶ کاراکتر"
                                 value={passwordFields.new}
                                 onChange={handlePasswordChange('new')}
-                                type="password"
+                                isError={passwordStatus.isSuccess === false || (passwordFields.new.length > 0 && passwordFields.new.length < 6)}
                             />
                             <PasswordInputField
                                 label="تکرار رمز عبور"
-                                placeholder="تکرار رمز عبور"
+                                placeholder="تکرار رمز عبور جدید"
                                 value={passwordFields.confirm}
                                 onChange={handlePasswordChange('confirm')}
-                                type="password"
+                                isError={passwordStatus.isSuccess === false || (passwordFields.new !== passwordFields.confirm && passwordFields.confirm.length > 0)}
                             />
                         </div>
                         
-                     
                         <div className="flex justify-center mt-6">
                             <button 
                                 onClick={handlePasswordSave}
-                                disabled={!isReadyToSavePassword}
-                                className={`flex items-center px-8 py-3 font-extrabold text-gray-900 rounded-xl shadow-lg transition-all duration-300 
-                                ${isReadyToSavePassword 
-                                    ? 'bg-yellow-400 hover:bg-yellow-500 shadow-yellow-500/50' 
+                                disabled={!isReadyToSavePassword || passwordStatus.loading}
+                                className={`flex items-center px-8 py-3 font-extrabold rounded-xl shadow-lg transition-all duration-300 
+                                ${isReadyToSavePassword && !passwordStatus.loading
+                                    ? 'bg-yellow-400 hover:bg-yellow-500 shadow-yellow-500/50 text-gray-900' 
                                     : 'bg-gray-300 dark:bg-gray-600 text-gray-500 cursor-not-allowed shadow-none'
                                 }`}
                             >
-                                <Save className="w-5 h-5 ml-2" />
-                                ذخیره تغییرات
+                                {passwordStatus.loading ? (
+                                    <>
+                                        <Loader className="w-5 h-5 ml-2 animate-spin" />
+                                        درحال ذخیره...
+                                    </>
+                                ) : (
+                                    <>
+                                        <Save className="w-5 h-5 ml-2" />
+                                        ذخیره تغییرات
+                                    </>
+                                )}
                             </button>
                         </div>
                     </div>
                 </div>
 
-             
-                <div className="mb-8 mt-12">
+            
+                <div className="mb-8 mt-12 bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
                     <header 
                         className="flex justify-between items-center cursor-pointer pb-2" 
                         onClick={() => setIs2FAExpanded(prev => !prev)}
                     >
-                        <h2 className="text-lg font-bold text-gray-900 dark:text-white rtl">
+                        <h2 className="text-xl font-extrabold text-gray-900 dark:text-white rtl">
                             تایید ورود دو مرحله‌ای
                         </h2>
                         {is2FAExpanded ? (
-                            <ChevronUp className="w-6 h-6 text-gray-500 dark:text-gray-400" />
+                            <ChevronUp className="w-6 h-6 text-purple-600" />
                         ) : (
-                            <ChevronDown className="w-6 h-6 text-gray-500 dark:text-gray-400" />
+                            <ChevronDown className="w-6 h-6 text-purple-600" />
                         )}
                     </header>
                     <div className="border-b-2 border-purple-200 dark:border-purple-700 mb-6 w-full"></div>
@@ -211,33 +272,33 @@ const Setting = () => {
                     </div>
                 </div>
 
-       
-                <div className="mb-8 mt-12">
+        
+                <div className="mb-8 mt-12 bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
                     <header 
                         className="flex justify-between items-center cursor-pointer pb-2" 
                         onClick={() => setIsEmailExpanded(prev => !prev)}
                     >
-                        <h2 className="text-lg font-bold text-gray-900 dark:text-white rtl">
+                        <h2 className="text-xl font-extrabold text-gray-900 dark:text-white rtl">
                             ایمیل بازیابی
                         </h2>
                         {isEmailExpanded ? (
-                            <ChevronUp className="w-6 h-6 text-gray-500 dark:text-gray-400" />
+                            <ChevronUp className="w-6 h-6 text-purple-600" />
                         ) : (
-                            <ChevronDown className="w-6 h-6 text-gray-500 dark:text-gray-400" />
+                            <ChevronDown className="w-6 h-6 text-purple-600" />
                         )}
                     </header>
                     <div className="border-b-2 border-purple-200 dark:border-purple-700 mb-6 w-full"></div>
 
                     <div className={`overflow-hidden transition-all duration-500 ${isEmailExpanded ? 'max-h-[500px]' : 'max-h-0'}`}>
-                        <div className="flex justify-end mt-4 max-w-sm mx-auto">
-                     
+                        <div className="flex justify-center mt-4 max-w-sm mx-auto">
+                        
                             <div className="relative w-full">
                                 <input
                                     type="email"
                                     value={recoveryEmail}
                                     onChange={(e) => setRecoveryEmail(e.target.value)}
                                     placeholder="example@gmail.com"
-                                    className="w-full p-3 pr-4 pl-4 text-sm text-gray-900 dark:text-white bg-gray-50 border-2 rounded-xl border-gray-300 focus:ring-purple-500 focus:border-purple-500 transition duration-150 rtl placeholder:text-gray-400 text-center"
+                                    className="w-full p-3 pr-10 pl-4 text-sm text-gray-900 dark:text-white bg-gray-50 border-2 rounded-xl border-gray-300 focus:ring-purple-500 focus:border-purple-500 transition duration-150 rtl placeholder:text-gray-400 text-right"
                                 />
                                 <Mail className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-purple-400" />
                                 <label className="absolute right-3 -top-3 px-2 text-xs font-medium text-gray-500 dark:text-gray-300 bg-gray-50 dark:bg-gray-800 transition rtl">
@@ -246,7 +307,7 @@ const Setting = () => {
                             </div>
                         </div>
                     
-                         <div className="flex justify-center mt-6">
+                        <div className="flex justify-center mt-6">
                             <button 
                                 onClick={handleEmailSave}
                                 disabled={recoveryEmail.length === 0}
@@ -262,7 +323,6 @@ const Setting = () => {
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     );
