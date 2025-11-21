@@ -4,13 +4,13 @@ const Sidebar = () => {
   return (
     <div className="w-[300px] bg-white rounded-xl shadow-lg p-4 font-sans text-right" >
       
-    {/* Total Amount Section */}
+
     <div className='bg-indigo-600 rounded-lg p-3 text-white mb-4'>
       <p className="text-sm opacity-90 mb-1">جمع کل :</p>
       <p className="text-2xl font-bold">200.000 تومان</p>
     </div>
     
-    {/* Details Section */}
+
     <div className="mb-4">
       <p className="text-gray-700 text-sm font-semibold mb-2">اطلاعات :</p>
       <div className="flex justify-between items-center text-gray-800 text-base">
