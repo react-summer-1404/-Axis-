@@ -1,14 +1,15 @@
 import React, { useState, useMemo } from 'react';
+import ThemeToggle from '../../Common/Button/ThemeToggle';
 
 const initialCourses = [
   { id: 1, name: "آموزش Tailwind CSS", teacher: "دکتر محمدحسین بحرالعلومی", price: "۵۰,۰۰۰", date: "۱۴۰۳/۰۳/۱۸", status: "در انتظار تایید", icon: "⚛️" },
-  { id: 2, name: "آموزش کامل کار با Figma", teacher: "دکتر محمدحسین بحرالعلومی", price: "۵۰,۰۰۰", date: "۱۴۰۳/۰۳/۱۸", status: "در انتظار تایید", icon: "🎨" },
-  { id: 3, name: "آموزش Next.js و Full Stack", teacher: "محمد رضا ساداتی", price: "۲,۵۰,۰0۰", date: "۱۴۰۳/۰۳/۰۱", status: "تایید شده", icon: "🚀" },
-  { id: 4, name: "آموزش Front-End پیشرفته", teacher: "دکتر محمدحسین بحرالعلومی", price: "۲,۵۰,۰0۰", date: "۱۴۰۳/۰۲/۲۵", status: "در انتظار تایید", icon: "💻" },
-  { id: 5, name: "مقدمات هوش مصنوعی", teacher: "علی رضایی", price: "۸۰,۰۰۰", date: "۱۴۰۳/۰۴/۰۵", status: "تایید شده", icon: "🤖" },
-  { id: 6, name: "یادگیری SQL و PostgreSQL", teacher: "ندا کریمی", price: "۱,۵۰,۰0۰", date: "۱۴۰۳/۰۱/۱۰", status: "تایید شده", icon: "💾" },
-  { id: 7, name: "طراحی UI/UX با Sketch", teacher: "هادی احمدی", price: "۶۰,۰۰۰", date: "۱۴۰۳/۰۵/۰۱", status: "در انتظار تایید", icon: "📐" },
-  { id: 8, name: "آموزش React Hooks", teacher: "دکتر محمدحسین بحرالعلومی", price: "۹۰,۰۰۰", date: "۱۴۰۳/۰۵/۱۰", status: "تایید شده", icon: "💡" },
+  { id: 2, name: "آموزش کامل کار با Figma", teacher: "دکتر محمدحسین بحرالعلومی", price: "۵۰,۰۰۰", date: "۱۴۰۳/۰۳/۱۸", status: "در انتظار تایید", icon: "⚛️" },
+  { id: 3, name: "آموزش Next.js و Full Stack", teacher: "محمد رضا ساداتی", price: "۲,۵۰,۰0۰", date: "۱۴۰۳/۰۳/۰۱", status: "تایید شده", icon: "⚛️" },
+  { id: 4, name: "آموزش Front-End پیشرفته", teacher: "دکتر محمدحسین بحرالعلومی", price: "۲,۵۰,۰0۰", date: "۱۴۰۳/۰۲/۲۵", status: "در انتظار تایید", icon: "⚛️" },
+  { id: 5, name: "مقدمات هوش مصنوعی", teacher: "علی رضایی", price: "۸۰,۰۰۰", date: "۱۴۰۳/۰۴/۰۵", status: "تایید شده", icon: "⚛️"},
+  { id: 6, name: "یادگیری SQL و PostgreSQL", teacher: "ندا کریمی", price: "۱,۵۰,۰0۰", date: "۱۴۰۳/۰۱/۱۰", status: "تایید شده", icon: "⚛️" },
+  { id: 7, name: "طراحی UI/UX با Sketch", teacher: "هادی احمدی", price: "۶۰,۰۰۰", date: "۱۴۰۳/۰۵/۰۱", status: "در انتظار تایید", icon: "⚛️" },
+  { id: 8, name: "آموزش React Hooks", teacher: "دکتر محمدحسین بحرالعلومی", price: "۹۰,۰۰۰", date: "۱۴۰۳/۰۵/۱۰", status: "تایید شده", icon: "⚛️" },
 ];
 
 const COURSES_PER_PAGE = 5; 
@@ -58,8 +59,8 @@ const DeletedCoursesList = ({ courses, isDarkMode, onRestore }) => {
                         key={course.id} 
                         className={`flex flex-col md:flex-row items-start md:items-center justify-between p-4 rounded-xl shadow-lg transition-shadow duration-300 border ${listBgClass}`}
                     >
-                        {/* اطلاعات دوره */}
-                        <div className="flex items-start space-x-3 space-x-reverse mb-3 md:mb-0">
+                      
+                        <div className="flex items-start space-x-3 space-x-reverse mb-3 md:mb-0 ">
                             <span className="text-3xl ml-2">{course.icon}</span>
                             <div>
                                 <p className={`font-semibold text-lg ${textColor}`}>{course.name}</p>
@@ -153,7 +154,7 @@ const ActionModal = ({ isOpen, onClose, actionType, course, onConfirmStatusChang
                     <strong>وضعیت:</strong> <StatusBadge status={course.status} />
                 </div>
                 {isStatusPending && (
-                    <p className="pt-2 text-red-600 font-semibold border-t border-gray-200 mt-3 pt-3">
+                    <p className=" text-red-600 font-semibold border-t border-gray-200 mt-3 pt-3">
                         این دوره منتظر تأیید شما برای انتشار است. با تأیید، وضعیت آن به "تایید شده" تغییر می‌کند.
                     </p>
                 )}
@@ -199,7 +200,7 @@ const ActionModal = ({ isOpen, onClose, actionType, course, onConfirmStatusChang
               {message}
             </div>
             
-            <div className="flex justify-end space-x-4 space-x-reverse pt-2 border-t mt-4 pt-4">
+            <div className="flex justify-end space-x-4 space-x-reverse  border-t mt-4 pt-4">
 
               {actionType === 'view' && isStatusPending && (
                 <button
@@ -377,7 +378,7 @@ export default function CoursesList() {
 
 
     return (
-        <div className={`min-h-screen p-4 md:p-10 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-100'}`} style={{ direction: 'rtl' }}>
+        <div className={`min-h-screen p-4 md:p-10 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-100'}`} style={{ direction: 'ltr' }}>
             
           
             <div className={`shadow-xl rounded-xl p-4 md:p-8 w-full max-w-7xl mx-auto ${containerClass}`}>
@@ -409,12 +410,10 @@ export default function CoursesList() {
                         
                         <button 
                             onClick={toggleTheme}
-                            className={`p-2 rounded-full transition-colors duration-200 mb-2 md:mb-0 ${
-                                isDarkMode ? 'bg-gray-600 text-yellow-300' : 'bg-yellow-100 text-yellow-600'
-                            }`}
+                            
                         >
                             <span className="text-xl">
-                                {isDarkMode ? '🌙' : '☀️'}
+                             <ThemeToggle/>
                             </span>
                         </button>
 
@@ -447,7 +446,7 @@ export default function CoursesList() {
                                     isDarkMode ? 'border-gray-700' : 'border-gray-300'
                                 }`}>
                                     <span className={`ml-2 text-xl ${isDarkMode ? 'text-indigo-400' : 'text-indigo-600'}`}>
-                                        {sortBy === 'newest' ? '⌄' : '≡'} 
+                                     
                                     </span>
                                     <select 
                                         value={sortBy} 

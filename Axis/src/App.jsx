@@ -2,7 +2,7 @@ import Layout from './Layout/Layout'
 import { createBrowserRouter, RouterProvider ,  } from "react-router-dom"
 import Courses from './Pages/Courses'
 
-// import Landing from './Componets/Landing'
+
 import CoursesDetails from './Pages/CoursesDetails';
 import Shop from './Pages/Shop/Shop';
 
@@ -18,9 +18,12 @@ import UserInformation from './Pages/UserInformation/UserInformation.jsx';
 import EditingInformation from './Pages/EditingInformation/EditingInformation.jsx';
 import CoursesList from './Pages/CourseList/CoursesList.jsx';
 import StatusDashboard from './Pages/StatusDashboard/StatusDashboard.jsx';
-import MyCommentsManager from './Pages/MyCommentsManager/MyCommentsManager.jsx';
-import Favorite from './Pages/favorite/favorite.jsx';
+// import MyCommentsManager from './Pages/MyCommentsManager/MyCommentsManager.jsx';
+// import Favorite from './Pages/favorite/favorite.jsx';
 import Setting from './Pages/Setting/Setting.jsx';
+import FavoriteCoursesListStyled from './Pages/favorite/FavoriteCoursesList.jsx';
+import MyFavoriteNewsList from './Pages/MyCommentsManager/FavoriteNews.jsx';
+import ReservedCourses from './Pages/StatusDashboard/ReservedCourses.jsx';
 
 
 
@@ -54,9 +57,9 @@ const router = createBrowserRouter([
     {path: '/Dashboard/UserInformation' , element: <UserInformation/>},
     {path: '/Dashboard/EditingInformation' , element: <EditingInformation/>},
     {path:'/Dashboard/CoursesList' , element: <CoursesList/>},
-    {path:'/Dashboard/StatusDashboard', element:<StatusDashboard/>},
-    {path: '/Dashboard/MyCommentsManager', element: <MyCommentsManager/>},
-    {path:'/Dashboard/Favorite' , element: <Favorite/>},
+    {path:'/Dashboard/StatusDashboard', element:<ReservedCourses/>},
+    {path: '/Dashboard/MyCommentsManager', element: <MyFavoriteNewsList/>},
+    {path:'/Dashboard/Favorite' , element: <FavoriteCoursesListStyled/>},
     {path:'/Dashboard/Setting' , element: <Setting/>}
          
     ]
