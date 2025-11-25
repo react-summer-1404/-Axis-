@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { Trash2, Eye, Search, ChevronDown, ShoppingBag } from 'lucide-react'; 
-
+import SearchIcon from '../../assets/Courses/DashboardIcon/Button.svg'
 import { fetchReservedCourses, mapReservedCourses } from '../../api/Dashboard/reservedCoursesAPI.js';
 
 const getStatusClasses = (status) => {
@@ -100,7 +100,7 @@ const ReservedCourses = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-50 p-4 sm:p-8 font-[Inter] rtl">
+        <div className="min-h-screen bg-gray-50 p-4 sm:p-8 font-[Inter] rtl" dir='ltr'>
             <div className="max-w-7xl mx-auto">
                 
                
@@ -119,7 +119,7 @@ const ReservedCourses = () => {
                             <ChevronDown size={18} />
                         </button>
                     </div>
-                    <div className="relative w-full sm:w-2/3">
+                    <div className="relative w-full  sm:w-2/3"dir='rtl'>
                         <input 
                             type="text" 
                             placeholder="جستجو برای دوره ..." 
@@ -127,12 +127,13 @@ const ReservedCourses = () => {
                             onChange={(e) => setSearchTerm(e.target.value)}
                             className="w-full pr-12 pl-4 py-3 rounded-2xl border border-gray-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
                         />
-                        <Search className="absolute right-4 top-1/2 -translate-y-1/2 text-blue-500" />
+                        <img src={SearchIcon} className="absolute left-1 top-1/2 -translate-y-1/2 text-blue-500"/>
+                      
                     </div>
                 </div>
 
               
-                <div className="bg-white rounded-3xl shadow-sm overflow-hidden border border-gray-100">
+                <div className="bg-white rounded-3xl shadow-sm overflow-hidden border border-gray-100"dir='rtl'>
                     <table className="w-full min-w-[800px]">
                      
                         <thead className="bg-white">
